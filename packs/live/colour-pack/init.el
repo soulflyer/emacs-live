@@ -7,7 +7,7 @@
 ;; use blackbored colour theme
 (load-file (concat (live-pack-lib-dir) "cyberpunk.el"))
 (load-file (concat (live-pack-lib-dir) "gandalf.el"))
-
-(color-theme-cyberpunk)
+(load-file (concat (live-pack-lib-dir) "blackbored.el"))
+(color-theme-blackbored)
 
 (set-cursor-color "yellow")

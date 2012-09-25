@@ -6,10 +6,6 @@
         path = packs/dev/foundation-pack/vendor/submodules/smex
         url = git://github.com/nonsequitur/smex.git
         ignore = untracked
-[submodule "packs/dev/clojure-pack/vendor/submodules/ac-slime"]
-        path = packs/dev/clojure-pack/vendor/submodules/ac-slime
-        url = git://github.com/purcell/ac-slime.git
-        ignore = untracked
 [submodule "packs/dev/clojure-pack/vendor/submodules/align-cljlet"]
         path = packs/dev/clojure-pack/vendor/submodules/align-cljlet
         url = git://github.com/gstamp/align-cljlet.git
@@ -17,10 +13,6 @@
 [submodule "packs/dev/clojure-pack/vendor/submodules/auto-complete"]
         path = packs/dev/clojure-pack/vendor/submodules/auto-complete
         url = git://github.com/m2ym/auto-complete.git
-        ignore = untracked
-[submodule "packs/dev/clojure-pack/vendor/submodules/slime"]
-        path = packs/dev/clojure-pack/vendor/submodules/slime
-        url = git://github.com/technomancy/slime.git
         ignore = untracked
 [submodule "packs/dev/power-pack/vendor/submodules/volatile-highlights"]
         path = packs/dev/power-pack/vendor/submodules/volatile-highlights
@@ -79,8 +71,20 @@
         url = git://github.com/m2ym/popwin-el.git
         ignore = untracked
 [submodule "packs/dev/clojure-pack/vendor/submodules/clojure-mode"]
-	path = packs/dev/clojure-pack/vendor/submodules/clojure-mode
-	url = git://github.com/samaaron/clojure-mode.git
+        path = packs/dev/clojure-pack/vendor/submodules/clojure-mode
+        url = git://github.com/samaaron/clojure-mode.git
 [submodule "packs/user/user-pack/lib/mark-multiple"]
-	path = packs/user/user-pack/lib/mark-multiple
-	url = https://github.com/magnars/mark-multiple.el.git
+        path = packs/user/user-pack/lib/mark-multiple
+        url = https://github.com/magnars/mark-multiple.el.git
+[submodule "packs/dev/clojure-pack/vendor/submodules/ac-nrepl"]
+        path = packs/dev/clojure-pack/vendor/submodules/ac-nrepl
+        url = git://github.com/purcell/ac-nrepl.git
+[submodule "packs/dev/git-pack/vendor/submodules/magit"]
+        path = packs/dev/git-pack/vendor/submodules/magit
+        url = git://github.com/magit/magit.git
+[submodule "packs/dev/clojure-pack/vendor/submodules/nrepl-eval-sexp-fu"]
+        path = packs/dev/clojure-pack/vendor/submodules/nrepl-eval-sexp-fu
+        url = git://github.com/samaaron/nrepl-eval-sexp-fu.git
+[submodule "packs/dev/clojure-pack/vendor/submodules/nrepl"]
+        path = packs/dev/clojure-pack/vendor/submodules/nrepl
+        url = git://github.com/kingtim/nrepl.el.git

@@ -81,3 +81,6 @@
 [submodule "packs/dev/clojure-pack/vendor/submodules/clojure-mode"]
 	path = packs/dev/clojure-pack/vendor/submodules/clojure-mode
 	url = git://github.com/samaaron/clojure-mode.git
+[submodule "packs/user/user-pack/lib/mark-multiple"]
+	path = packs/user/user-pack/lib/mark-multiple
+	url = https://github.com/magnars/mark-multiple.el.git

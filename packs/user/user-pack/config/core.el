@@ -8,6 +8,7 @@
 (add-to-list 'same-window-regexps "\*compilation\*")
 (add-to-list 'same-window-regexps "\*ruby\*")
 (add-to-list 'same-window-regexps "\*rails\*")
+(add-to-list 'same-window-regexps "\*Shell Command Output\*")
 ;;(autoload 'html-helper-mode "html-helper-mode" "Yay HTML" t)
 ;;(setq-default  cursor-type 'bar)
 (setq show-paren-style (quote expression))
@@ -34,6 +35,18 @@
 (require 'zencoding-mode)
 (add-hook 'sgml-mode-hook 'zencoding-mode)
 
+(add-hook 'ruby-mode-hook 'paredit-mode)
+
+;; Enable paredit for a couple for non lisp modes; tweak
+;; paredit-space-for-delimiter-predicates to avoid inserting spaces
+;; before open parens.
+(dolist (mode '(ruby espresso))
+  (add-hook (intern (format "%s-mode-hook" mode))
+            '(lambda ()
+               (add-to-list (make-local-variable 'paredit-space-for-delimiter-predicates)
+                            (lambda (_ _) nil))
+               (enable-paredit-mode))))
+
 (live-add-pack-lib "expand-region.el")
 (require 'expand-region)
 
@@ -41,6 +54,9 @@
 (require 'rename-sgml-tag)
 (require 'inline-string-rectangle)
 (require 'mark-more-like-this)
+
+(live-add-pack-lib "multiple-cursors.el")
+(require 'multiple-cursors)
 
 ;; Some stuff from emacs rocks
 (defun untabify-buffer ()

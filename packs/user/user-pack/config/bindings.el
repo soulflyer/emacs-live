@@ -4,16 +4,16 @@
 ;;(define-key global-map (kbd "C-+") 'text-scale-increase)
 ;;(define-key global-map (kbd "C--") 'text-scale-decrease)
 
-(global-set-key (kbd "C-c C-p") 'mark-previous-like-this)
-(global-set-key (kbd "C-c C-n") 'mark-next-like-this)
-(global-set-key (kbd "C-c a") 'mark-all-like-this)
+(global-set-key (kbd "C-c C-p") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-n") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-c a") 'mc/mark-all-like-this)
 
 ;;
 ;; Put some bindings in my personal minor mode so
 ;; they aren't overridden by other modes
 ;;
-(define-key slime-repl-mode-map (kbd "<up>") 'slime-repl-backward-input)
-(define-key slime-repl-mode-map (kbd "<down>") 'slime-repl-next-input)
+;;(define-key slime-repl-mode-map (kbd "<up>") 'slime-repl-backward-input)
+;;(define-key slime-repl-mode-map (kbd "<down>") 'slime-repl-next-input)
 
 (define-key ruby-mode-map (kbd "RET") 'newline-and-indent)
 (define-key scss-mode-map (kbd "RET") 'newline-and-indent)

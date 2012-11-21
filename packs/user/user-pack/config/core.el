@@ -11,6 +11,7 @@
 (add-to-list 'same-window-regexps "\*Shell Command Output\*")
 (add-to-list 'same-window-regexps "\*grep\*")
 (add-to-list 'same-window-regexps "*.erb")
+(add-to-list 'same-window-regexps "\*Backtrace\*")
 ;;(autoload 'html-helper-mode "html-helper-mode" "Yay HTML" t)
 ;;(setq-default  cursor-type 'bar)
 (setq show-paren-style (quote expression))

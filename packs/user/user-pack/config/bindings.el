@@ -15,15 +15,15 @@
 ;;(define-key slime-repl-mode-map (kbd "<up>") 'slime-repl-backward-input)
 ;;(define-key slime-repl-mode-map (kbd "<down>") 'slime-repl-next-input)
 
-(define-key ruby-mode-map (kbd "RET") 'newline-and-indent)
-(define-key scss-mode-map (kbd "RET") 'newline-and-indent)
+(define-key ruby-mode-map (kbd "RET") 'reindent-then-newline-and-indent)
+(define-key scss-mode-map (kbd "RET") 'reindent-then-newline-and-indent)
 ;;(define-key html-mode-map (kbd "RET") 'newline-and-indent)
 (add-hook 'html-mode-hook 'my-html-mods)
 (defun my-html-mods ()
   "Add some stuff to html-mode"
   ;;(require 'rename-sgml-tag)
   ;;(define-key sgml-mode-map (kbd "C-c C-r") 'rename-sgml-tag)
-  (define-key html-mode-map (kbd "RET") 'newline-and-indent))
+  (define-key html-mode-map (kbd "RET") 'reindent-then-newline-and-indent))
 (add-hook 'sgml-mode-hook 'my-sgml-mods)
 (defun my-sgml-mods ()
   "Add to sgml mode"

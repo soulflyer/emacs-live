@@ -199,3 +199,12 @@ and overlay is highlighted between MK and END-MK."
          ;; We want a fringe arrow (instead of highlighting).
          (setq next-error-overlay-arrow-position
                    (copy-marker (line-beginning-position)))))))
+
+;; Add file creation to dired
+(defun dired-make-file (new-file-name)
+  (interactive "sFile name: ")
+  (shell-command (concat "touch " new-file-name))
+  (message "created %s" new-file-name)
+  (message "major mode %s" major-mode)
+  (if (string= major-mode "dired-mode")
+      (revert-buffer)))

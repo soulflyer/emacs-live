@@ -95,6 +95,9 @@ Including indent-buffer, which should not be called automatically on save."
 (require 'feature-mode)
 (add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
 
+;; Open .rake files in ruby mode
+(add-to-list 'auto-mode-alist '("\.rake$" . ruby-mode))
+
 ;;stop emacs from shitting all over my file system
 (setq make-backup-files nil) ; stop creating those backup~ files
 (setq auto-save-default nil) ; stop creating those #autosave# files

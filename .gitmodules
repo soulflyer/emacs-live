@@ -12,7 +12,7 @@
         ignore = untracked
 [submodule "packs/dev/clojure-pack/vendor/submodules/auto-complete"]
         path = packs/dev/clojure-pack/vendor/submodules/auto-complete
-        url = git://github.com/m2ym/auto-complete.git
+        url = git://github.com/samaaron/auto-complete.git
         ignore = untracked
 [submodule "packs/dev/power-pack/vendor/submodules/volatile-highlights"]
         path = packs/dev/power-pack/vendor/submodules/volatile-highlights
@@ -87,4 +87,34 @@
         url = git://github.com/samaaron/nrepl-eval-sexp-fu.git
 [submodule "packs/dev/clojure-pack/vendor/submodules/nrepl"]
         path = packs/dev/clojure-pack/vendor/submodules/nrepl
-        url = git://github.com/kingtim/nrepl.el.git
+        url = git://github.com/samaaron/nrepl.el.git
+[submodule "packs/dev/lang-pack/vendor/submodules/js2"]
+        path = packs/dev/lang-pack/vendor/submodules/js2
+        url = git://github.com/mooz/js2-mode.git
+[submodule "packs/dev/clojure-pack/vendor/submodules/popup-el"]
+        path = packs/dev/clojure-pack/vendor/submodules/popup-el
+        url = git://github.com/auto-complete/popup-el.git
+[submodule "packs/dev/clojure-pack/vendor/submodules/fuzzy-el"]
+        path = packs/dev/clojure-pack/vendor/submodules/fuzzy-el
+        url = git://github.com/auto-complete/fuzzy-el.git
+[submodule "packs/dev/power-pack/vendor/submodules/browse-kill-ring"]
+        path = packs/dev/power-pack/vendor/submodules/browse-kill-ring
+        url = git://github.com/samaaron/browse-kill-ring.git
+[submodule "packs/dev/power-pack/vendor/submodules/expand-region"]
+        path = packs/dev/power-pack/vendor/submodules/expand-region
+        url = git://github.com/magnars/expand-region.el.git
+[submodule "packs/dev/foundation-pack/vendor/submodules/exec-path-from-shell"]
+        path = packs/dev/foundation-pack/vendor/submodules/exec-path-from-shell
+        url = git://github.com/purcell/exec-path-from-shell.git
+[submodule "packs/dev/power-pack/vendor/submodules/ace-jump-mode"]
+        path = packs/dev/power-pack/vendor/submodules/ace-jump-mode
+        url = git://github.com/winterTTr/ace-jump-mode.git
+[submodule "packs/dev/foundation-pack/vendor/submodules/auto-compile"]
+        path = packs/dev/foundation-pack/vendor/submodules/auto-compile
+        url = git://github.com/tarsius/auto-compile.git
+[submodule "packs/dev/foundation-pack/vendor/submodules/packed"]
+        path = packs/dev/foundation-pack/vendor/submodules/packed
+        url = git://github.com/tarsius/packed.git
+[submodule "packs/dev/power-pack/vendor/submodules/multiple-cursors"]
+        path = packs/dev/power-pack/vendor/submodules/multiple-cursors
+        url = git://github.com/magnars/multiple-cursors.el.git

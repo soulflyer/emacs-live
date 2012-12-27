@@ -56,6 +56,7 @@
      (lazy-highlight ((t (:background "yellow" :foreground "black"))))
      (query-replace ((t (:background "#333333"))))
      (Highline-face ((t (:background "SeaGreen"))))
+     (hl-line ((t (:background "#333333"))))
      (italic ((t (nil))))
      (left-margin ((t (nil))))
      (text-cursor ((t (:background "yellow" :foreground "black"))))
@@ -80,6 +81,8 @@
      (ac-completion-face ((t (:foreground "darkgray" :underline t))))
      (ac-candidate-face ((t (:background "gray60" :foreground "black"))))
      (ac-selection-face ((t (:background "deep pink" :foreground "black"))))
+     (ac-yasnippet-candidate-face ((t (:background "gray60" :foreground "black"))))
+     (ac-yasnippet-selection-face ((t (:background "deep pink" :foreground "black"))))
      (popup-isearch-match ((t (:background "black" :foreground "deep pink"))))
      (popup-tip-face ((t (:background "#333333" :foreground "white"))))
      (popup-scroll-bar-foreground-face ((t (:background "#0A0A0A"))))
@@ -160,7 +163,19 @@
 
      (vhl/default-face ((t (:background "#333333"))))
      (undo-tree-visualizer-active-branch-face ((t (:foreground "deep pink" :background "black"))))
-     (hl-sexp-face ((t (:background "grey9")))))))
+     (hl-sexp-face ((t (:background "grey9"))))
+
+     (browse-kill-ring-current-entry-face ((t (:background "#333333"))))
+
+     (markdown-link-face ((t (:foreground "#FBDE2D"))))
+     (markdown-url-face ((t (:foreground  "#61CE3C"))))
+     (markdown-bold-face ((t (:foreground "#FF6400"))))
+     (markdown-italic-face ((t (:italic t :foreground "#FF6400"))))
+     (markdown-pre-face ((t (:foreground "#4c83ff"))))
+     (markdown-inline-code-face ((t (:foreground "#4c83ff"))))
+     (markdown-list-face ((t (:foreground "#8B8989"))))
+     ))
+  )
 
 
 

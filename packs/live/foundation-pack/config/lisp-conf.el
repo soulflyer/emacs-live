@@ -1,3 +1,4 @@
+(add-to-list 'auto-mode-alist '("\\.el$" . emacs-lisp-mode))
 (add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode)
 (add-hook 'lisp-interaction-mode-hook 'turn-on-eldoc-mode)
 (add-hook 'ielm-mode-hook 'turn-on-eldoc-mode)
@@ -24,7 +25,4 @@
                                    (let ((obj (read (current-buffer))))
                                      (and (symbolp obj) (fboundp obj) obj))))))
                    (describe-function sym))
-                  ((setq sym (variable-at-point)) (describe-variable sym))
-                  ;; now let it operate fully -- i.e. also check the
-                  ;; surrounding sexp for a function call.
-                  ((setq sym (function-at-point)) (describe-function sym)))))
+                  ((setq sym (variable-at-point)) (describe-variable sym)))))

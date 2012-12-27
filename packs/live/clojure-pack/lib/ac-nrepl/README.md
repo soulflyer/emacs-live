@@ -8,9 +8,6 @@ interactive auto-completion framework
 Where nrepl provides it, pop-up documentation for completed symbols
 will be displayed.
 
-
-*This is an early work in progress, and liable to breakage as nrepl evolves.*
-
 Installation
 =============
 
@@ -36,7 +33,7 @@ active. To do this, put the following code in your emacs init file to
      (eval-after-load "auto-complete"
        '(add-to-list 'ac-modes 'nrepl-mode))
 
-If you want to trigger `auto-complete` using TAB in nrepl buffers, you may
+If you want to trigger `auto-complete` using <kbd>TAB</kbd> in nrepl buffers, you may
 want to put `auto-complete` into your `completion-at-point-functions`:
 
     (defun set-auto-complete-as-completion-at-point-function ()
@@ -45,6 +42,10 @@ want to put `auto-complete` into your `completion-at-point-functions`:
 
     (add-hook 'nrepl-mode-hook 'set-auto-complete-as-completion-at-point-function)
     (add-hook 'nrepl-interaction-mode-hook 'set-auto-complete-as-completion-at-point-function)
+
+You might consider using `ac-nrepl`'s popup documentation in place of `nrepl-doc`:
+
+    (define-key nrepl-interaction-mode-map (kbd "C-c C-d") 'ac-nrepl-popup-doc)
 
 Usage
 =====
@@ -62,4 +63,20 @@ for the completed symbol should also be displayed.
 
 [marmalade]: http://marmalade-repo.org
 [melpa]: http://melpa.milkbox.net
+
+Acknowledgements
+================
+
+Many thanks to the following contributors:
+
+* [Sam Aaron](https://github.com/samaaron)
+
+
+<hr>
+
+[![](http://api.coderwall.com/purcell/endorsecount.png)](http://coderwall.com/purcell)
+
+[![](http://www.linkedin.com/img/webpromo/btn_liprofile_blue_80x15.png)](http://uk.linkedin.com/in/stevepurcell)
+
+[Steve Purcell's blog](http://www.sanityinc.com/) // [@sanityinc on Twitter](https://twitter.com/sanityinc)
 

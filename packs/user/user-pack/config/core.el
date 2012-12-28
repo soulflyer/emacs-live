@@ -17,6 +17,11 @@
 (setq show-paren-style (quote expression))
 (delete-selection-mode 1)
 
+(live-load-lib-file "blackbored.el")
+(load-file (concat (live-pack-lib-dir) "blackbored.el"))
+;; (color-theme-blackbored)
+
+
 (require 'browse-kill-ring)
 (browse-kill-ring-default-keybindings)
 (require 'scss-mode)

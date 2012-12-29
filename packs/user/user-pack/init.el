@@ -20,3 +20,6 @@
 ;; Load bindings config
 (live-load-config-file "core.el")
 (live-load-config-file "bindings.el")
+(live-load-config-file "blackbored.el")
+
+(color-theme-blackbored)

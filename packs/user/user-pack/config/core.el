@@ -12,15 +12,11 @@
 (add-to-list 'same-window-regexps "\*grep\*")
 (add-to-list 'same-window-regexps "*.erb")
 (add-to-list 'same-window-regexps "\*Backtrace\*")
+(add-to-list 'same-window-regexps "\*nrepl\*")
 ;;(autoload 'html-helper-mode "html-helper-mode" "Yay HTML" t)
 ;;(setq-default  cursor-type 'bar)
 (setq show-paren-style (quote expression))
 (delete-selection-mode 1)
-
-(live-load-lib-file "blackbored.el")
-(load-file (concat (live-pack-lib-dir) "blackbored.el"))
-;; (color-theme-blackbored)
-
 
 (require 'browse-kill-ring)
 (browse-kill-ring-default-keybindings)

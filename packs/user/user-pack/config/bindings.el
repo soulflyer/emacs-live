@@ -69,7 +69,6 @@
 (define-key diw-minor-mode-map  (kbd "M-2") 'er/contract-region)
 
 
-
 (define-minor-mode diw-minor-mode
   "A minor mode so that my key settings aren't shadowed by other major/minor modes"
   t " diw" 'diw-minor-mode-map)

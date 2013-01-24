@@ -67,7 +67,7 @@
 (define-key diw-minor-mode-map  (kbd "M-M") 'iy-go-to-char-backward)
 (define-key diw-minor-mode-map  (kbd "C-@") 'er/expand-region)
 (define-key diw-minor-mode-map  (kbd "M-2") 'er/contract-region)
-
+(define-key diw-minor-mode-map  (kbd "C-c o") 'org-todo-list)
 
 (define-minor-mode diw-minor-mode
   "A minor mode so that my key settings aren't shadowed by other major/minor modes"

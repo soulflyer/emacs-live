@@ -13,6 +13,12 @@
 (add-to-list 'same-window-regexps "*.erb")
 (add-to-list 'same-window-regexps "\*Backtrace\*")
 (add-to-list 'same-window-regexps "\*nrepl\*")
+;;(add-to-list 'same-window-regexps "\*Org Agenda\*")
+;; the line above doesn't work. Set org-agenda-window-setup instead
+(setq org-agenda-window-setup 'current-window)
+
+(setq org-agenda-files '("~/Documents/Plans"))
+(setq org-use-speed-commands t)
 ;;(autoload 'html-helper-mode "html-helper-mode" "Yay HTML" t)
 ;;(setq-default  cursor-type 'bar)
 (setq show-paren-style (quote expression))

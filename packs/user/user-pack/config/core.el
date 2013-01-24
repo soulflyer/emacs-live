@@ -19,6 +19,10 @@
 
 (setq org-agenda-files '("~/Documents/Plans"))
 (setq org-use-speed-commands t)
+(setq org-priority-faces (quote ((?A :background "#ff0000")
+                                 (?B :foreground "#4040f0")
+                                 (?C :foreground "#575757"))))
+
 ;;(autoload 'html-helper-mode "html-helper-mode" "Yay HTML" t)
 ;;(setq-default  cursor-type 'bar)
 (setq show-paren-style (quote expression))

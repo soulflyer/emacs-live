@@ -22,6 +22,7 @@
 (setq org-priority-faces (quote ((?A :background "#ff0000")
                                  (?B :foreground "#4040f0")
                                  (?C :foreground "#575757"))))
+(setq org-log-done 'time)
 
 ;;(autoload 'html-helper-mode "html-helper-mode" "Yay HTML" t)
 ;;(setq-default  cursor-type 'bar)

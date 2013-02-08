@@ -22,6 +22,7 @@
 (setq org-use-speed-commands t)
 (setq org-lowest-priority 73)
 
+(setq org-speed-commands-user nil)
 (add-to-list 'org-speed-commands-user '("4" org-priority 68))
 (add-to-list 'org-speed-commands-user '("5" org-priority 69))
 (add-to-list 'org-speed-commands-user '("6" org-priority 70))

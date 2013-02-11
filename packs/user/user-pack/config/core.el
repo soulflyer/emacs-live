@@ -19,6 +19,10 @@
 (setq org-agenda-window-setup 'current-window)
 
 (setq org-agenda-files '("~/Documents/Plans"))
+
+(setq org-enforce-todo-dependencies t)
+(setq org-agenda-dim-blocked-tasks t)
+
 (setq org-use-speed-commands t)
 (setq org-lowest-priority 73)
 
@@ -30,15 +34,18 @@
 (add-to-list 'org-speed-commands-user '("8" org-priority 72))
 (add-to-list 'org-speed-commands-user '("9" org-priority 73))
 
-(setq org-priority-faces (quote ((?A :foreground "#dd0000")
-                                 (?B :foreground "#d75f00")
-                                 (?C :foreground "#af8700")
-                                 (?D :foreground "#90a000")
-                                 (?E :foreground "#00a000")
-                                 (?F :foreground "#0040a0")
-                                 (?G :foreground "#3030a0")
-                                 (?H :foreground "#575757")
-                                 (?I :foreground "#404040"))))
+(setq org-priority-faces (quote ((?A :foreground "#d02030")
+                                 (?B :foreground "#e00000")
+                                 (?C :foreground "#f05000")
+                                 (?D :foreground "#c0c000")
+                                 (?E :foreground "#00f000")
+                                 (?F :foreground "#00d090")
+                                 (?G :foreground "#0000f4")
+                                 (?H :foreground "#8000d0")
+                                 (?I :foreground "#5757570"))))
+
+(custom-set-faces '(org-agenda-dimmed-todo-face ((t (:foreground "#7f7f7f")))))
+
 (setq org-log-done 'time)
 
 ;;(autoload 'html-helper-mode "html-helper-mode" "Yay HTML" t)

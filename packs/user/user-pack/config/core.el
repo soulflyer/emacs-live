@@ -44,6 +44,7 @@
                                  (?H :foreground "#8000d0")
                                  (?I :foreground "#575757"))))
 
+(add-hook 'org-mode-hook (lambda ()
 ;; (set-face-attribute 'org-level-1 nil :foreground "#e00000")
 ;; (set-face-attribute 'org-level-2 nil :foreground "#f05000")
 ;; (set-face-attribute 'org-level-3 nil :foreground "#c0c000")
@@ -78,7 +79,7 @@
 (set-face-attribute 'org-level-5 nil :foreground "#508080")
 (set-face-attribute 'org-level-6 nil :foreground "#606060")
 (set-face-attribute 'org-level-7 nil :foreground "#505050")
-(set-face-attribute 'org-level-8 nil :foreground "#404040")
+(set-face-attribute 'org-level-8 nil :foreground "#404040")))
 
 
 (custom-set-faces '(org-agenda-dimmed-todo-face ((t (:foreground "#7f7f7f")))))

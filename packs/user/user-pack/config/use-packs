@@ -1,0 +1,2 @@
+;; ln -s (path to this file) ~/.emacs-live.el
+(live-use-packs `(live/foundation-pack live/power-pack live/lang-pack live/colour-pack  live/clojure-pack user/user-pack))

@@ -14,6 +14,17 @@
 (add-to-list 'same-window-regexps "\*Backtrace\*")
 (add-to-list 'same-window-regexps "\*nrepl\*")
 (add-to-list 'same-window-regexps "\*Colors\*")
+
+;;(add-to-list 'org-file-apps '("\\.jpg\\'" . default) t)
+
+(eval-after-load "org"
+  '(progn
+     ;; .txt files aren't in the list initially, but in case that changes
+     ;; in a future version of org, use if to avoid errors
+     (if (assoc "\\.jpg\\'" org-file-apps)
+         (setcdr (assoc "\\.jpg\\'" org-file-apps) "default")
+       (add-to-list 'org-file-apps '("\\.jpg\\'" . default) t))))
+
 ;;(add-to-list 'same-window-regexps "\*Org Agenda\*")
 ;; the line above doesn't work. Set org-agenda-window-setup instead
 (setq org-agenda-window-setup 'current-window)

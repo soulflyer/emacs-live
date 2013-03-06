@@ -102,6 +102,9 @@
 (setq show-paren-style (quote expression))
 (delete-selection-mode 1)
 
+(require 'openwith)
+(openwith-mode t)
+
 (require 'browse-kill-ring)
 (browse-kill-ring-default-keybindings)
 (require 'scss-mode)

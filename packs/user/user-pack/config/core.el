@@ -14,7 +14,7 @@
 (add-to-list 'same-window-regexps "\*Backtrace\*")
 (add-to-list 'same-window-regexps "\*nrepl\*")
 (add-to-list 'same-window-regexps "\*Colors\*")
-
+(add-to-list 'same-window-regexps "\*Org Agenda\*")
 ;;(add-to-list 'org-file-apps '("\\.jpg\\'" . default) t)
 
 (eval-after-load "org"

@@ -104,8 +104,8 @@
 ;;(require 'el4r)
 ;;(el4r-boot)
 
-(live-add-pack-lib "rinari")
-(require 'rinari)
+;;(live-add-pack-lib "rinari")
+;;(require 'rinari)
 
 (require 'inf-ruby)
 (autoload 'inf-ruby "inf-ruby" "Run an inferior Ruby process" t)
@@ -131,10 +131,10 @@
 (live-add-pack-lib "expand-region.el")
 (require 'expand-region)
 
-(live-add-pack-lib "mark-multiple")
-(require 'rename-sgml-tag)
-(require 'inline-string-rectangle)
-(require 'mark-more-like-this)
+;;(live-add-pack-lib "mark-multiple")
+;;(require 'rename-sgml-tag)
+;;(require 'inline-string-rectangle)
+;;(require 'mark-more-like-this)
 
 (live-add-pack-lib "multiple-cursors.el")
 (require 'multiple-cursors)
@@ -169,9 +169,9 @@ Including indent-buffer, which should not be called automatically on save."
 
 ;;end of stuff from emacs rocks
 
-(live-add-pack-lib "cucumber.el")
-(require 'feature-mode)
-(add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
+;;(live-add-pack-lib "cucumber.el")
+;;(require 'feature-mode)
+;;(add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
 
 ;; Open .rake files in ruby mode
 (add-to-list 'auto-mode-alist '("\.rake$" . ruby-mode))

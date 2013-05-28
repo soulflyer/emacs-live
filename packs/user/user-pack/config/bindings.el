@@ -19,7 +19,7 @@
 
 (define-key ruby-mode-map (kbd "RET") 'reindent-then-newline-and-indent)
 (define-key scss-mode-map (kbd "RET") 'reindent-then-newline-and-indent)
-(define-key feature-mode-map (kbd "RET") 'reindent-then-newline-and-indent)
+;;(define-key feature-mode-map (kbd "RET") 'reindent-then-newline-and-indent)
 ;;(define-key html-mode-map (kbd "RET") 'newline-and-indent)
 (add-hook 'html-mode-hook 'my-html-mods)
 (defun my-html-mods ()

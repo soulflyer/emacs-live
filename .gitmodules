@@ -24,7 +24,7 @@
         ignore = untracked
 [submodule "packs/dev/power-pack/vendor/submodules/undo-tree"]
         path = packs/dev/power-pack/vendor/submodules/undo-tree
-        url = http://www.dr-qubit.org/git/undo-tree.git
+        url = git://github.com/emacsmirror/undo-tree.git
         ignore = untracked
 [submodule "packs/dev/lang-pack/vendor/submodules/actionscript-mode"]
         path = packs/dev/lang-pack/vendor/submodules/actionscript-mode
@@ -36,7 +36,7 @@
         ignore = untracked
 [submodule "packs/dev/power-pack/vendor/submodules/scratch"]
         path = packs/dev/power-pack/vendor/submodules/scratch
-        url = git://github.com/ieure/scratch-el.git
+        url = git://github.com/samaaron/scratch-el.git
         ignore = untracked
 [submodule "packs/dev/power-pack/vendor/submodules/yasnippet"]
         path = packs/dev/power-pack/vendor/submodules/yasnippet
@@ -117,3 +117,9 @@
 [submodule "packs/dev/power-pack/vendor/submodules/emacs-git-gutter"]
 	path = packs/dev/power-pack/vendor/submodules/emacs-git-gutter
 	url = git://github.com/syohex/emacs-git-gutter.git
+[submodule "packs/dev/lang-pack/vendor/submodules/glsl-mode"]
+	path = packs/dev/lang-pack/vendor/submodules/glsl-mode
+	url = git://github.com/jimhourihan/glsl-mode.git
+[submodule "packs/dev/org-pack/vendor/submodules/org-mode"]
+	path = packs/dev/org-pack/vendor/submodules/org-mode
+	url = git://orgmode.org/org-mode.git

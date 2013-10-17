@@ -33,6 +33,7 @@
 (global-set-key (kbd "C-c g p") 'git-gutter:previous-diff)
 (global-set-key (kbd "C-c g n") 'git-gutter:next-diff)
 (global-set-key (kbd "C-c g d") 'git-gutter:popup-diff)
+(global-set-key (kbd "C-c g r") 'git-gutter:revert-hunk)
 
 ;;text manipulation shortcuts
 (global-set-key (kbd "C-c t b") 'untabify-buffer)
@@ -110,11 +111,27 @@
 (define-key paredit-mode-map (kbd "M-d")     'live-paredit-forward-kill-sexp)
 (define-key paredit-mode-map (kbd "M-k")     'live-paredit-backward-kill)
 (define-key paredit-mode-map (kbd "M-\\")    'live-paredit-delete-horizontal-space)
+(define-key paredit-mode-map (kbd "C-M-i")   'paredit-forward-down)
+(define-key paredit-mode-map (kbd "C-M-n")   'paredit-forward-up)
+(define-key paredit-mode-map (kbd "C-M-p")   'paredit-backward-down)
+(define-key paredit-mode-map (kbd "C-M-u")   'paredit-backward-up)
+
+
+(define-key nrepl-interaction-mode-map (kbd "C-M-i")   'paredit-forward-down)
+
+;; org-mode
+(define-key org-mode-map (kbd "C-M-f")    'org-metadown)
+(define-key org-mode-map (kbd "C-M-b")    'org-metaup)
+(define-key org-mode-map (kbd "C-M-_")    'undo-tree-undo)
+(define-key org-mode-map (kbd "C-M-l")    'org-shiftright)
+(define-key org-mode-map (kbd "C-M-j")    'org-shiftleft)
+(define-key org-mode-map (kbd "C-M-i")    'org-shiftup)
+(define-key org-mode-map (kbd "C-M-k")    'org-shiftdown)
 
 ;;browse kill ring (visual paste)
 (global-set-key (kbd "M-y") 'browse-kill-ring)
 
-;;make C-\ and M-\ cut and copy respectively
+;;make C-] and M-] cut and copy respectively
 (global-set-key (kbd "C-]") 'kill-region)
 (global-set-key (kbd "M-]") 'kill-ring-save)
 
@@ -134,6 +151,7 @@
 
 ;;redefine help shortcut
 (global-set-key (kbd "M-h") 'help-command)
+(define-key org-mode-map (kbd "M-h") 'help-command)
 
 ;;allow the deletion of words:
 ;;backward kill word (forward kill word is M-d)
@@ -185,7 +203,7 @@
 ;; File
 (global-set-key (kbd "C-x M-f")   'ido-find-file-other-window)
 (global-set-key (kbd "C-x C-M-f") 'find-file-in-project)
-(global-set-key (kbd "C-x f")     'recentf-ido-find-file)
+(global-set-key (kbd "C-x f")     'live-recentf-ido-find-file)
 (global-set-key (kbd "C-x C-r")   'ido-recentf-open)
 (global-set-key (kbd "M-`")       'file-cache-minibuffer-complete)
 (global-set-key (kbd "C-x C-b")   'ibuffer)

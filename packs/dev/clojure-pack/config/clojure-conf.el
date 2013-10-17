@@ -1,4 +1,6 @@
 (live-add-pack-lib "clojure-mode")
+(require 'smartparens)
+
 
 (eval-after-load 'clojure-mode
   '(font-lock-add-keywords
@@ -53,7 +55,7 @@
                               auto-mode-alist))
 
 (dolist (x '(scheme emacs-lisp lisp clojure))
-  (add-hook (intern (concat (symbol-name x) "-mode-hook")) 'enable-paredit-mode)
+  (add-hook (intern (concat (symbol-name x) "-mode-hook")) '(lambda () (smartparens-strict-mode 1)))
   (add-hook (intern (concat (symbol-name x) "-mode-hook")) 'rainbow-delimiters-mode))
 
 (defun live-toggle-clj-keyword-string ()
@@ -74,3 +76,36 @@
     (goto-char original-point)))
 
 (define-key clojure-mode-map (kbd "C-:") 'live-toggle-clj-keyword-string)
+
+(defun live-cycle-clj-coll ()
+  "convert the coll at (point) from (x) -> {x} -> [x] -> (x) recur"
+  (interactive)
+  (let* ((original-point (point)))
+    (while (and (> (point) 1)
+                (not (equal "(" (buffer-substring-no-properties (point) (+ 1 (point)))))
+                (not (equal "{" (buffer-substring-no-properties (point) (+ 1 (point)))))
+                (not (equal "[" (buffer-substring-no-properties (point) (+ 1 (point))))))
+      (backward-char))
+    (cond
+     ((equal "(" (buffer-substring-no-properties (point) (+ 1 (point))))
+      (insert "{" (substring (live-delete-and-extract-sexp) 1 -1) "}"))
+     ((equal "{" (buffer-substring-no-properties (point) (+ 1 (point))))
+      (insert "[" (substring (live-delete-and-extract-sexp) 1 -1) "]"))
+     ((equal "[" (buffer-substring-no-properties (point) (+ 1 (point))))
+      (insert "(" (substring (live-delete-and-extract-sexp) 1 -1) ")"))
+     ((equal 1 (point))
+      (message "beginning of file reached, this was probably a mistake.")))
+    (goto-char original-point)))
+
+(define-key clojure-mode-map (kbd "C->") 'live-cycle-clj-coll)
+
+
+(defun nrepl-warn-when-not-connected ()
+  (interactive)
+  (message "Oops! You're not connected to an nREPL server. Please run M-x nrepl or M-x nrepl-jack-in to connect."))
+
+(define-key clojure-mode-map (kbd "C-M-x")   'nrepl-warn-when-not-connected)
+(define-key clojure-mode-map (kbd "C-x C-e") 'nrepl-warn-when-not-connected)
+(define-key clojure-mode-map (kbd "C-c C-e") 'nrepl-warn-when-not-connected)
+(define-key clojure-mode-map (kbd "C-c C-l") 'nrepl-warn-when-not-connected)
+(define-key clojure-mode-map (kbd "C-c C-r") 'nrepl-warn-when-not-connected)

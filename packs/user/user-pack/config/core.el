@@ -17,6 +17,8 @@
 (add-to-list 'same-window-regexps "\*Org Agenda\*")
 ;;(add-to-list 'org-file-apps '("\\.jpg\\'" . default) t)
 
+(setq tramp-default-method "sshx")
+
 (eval-after-load "org"
   '(progn
      ;; .txt files aren't in the list initially, but in case that changes
@@ -179,6 +181,7 @@ Including indent-buffer, which should not be called automatically on save."
 ;;stop emacs from shitting all over my file system
 (setq make-backup-files nil) ; stop creating those backup~ files
 (setq auto-save-default nil) ; stop creating those #autosave# files
+(setq backup-inhibited t);
 
 ;; Function to open and goto indented next line
 (defun open-next-line()

@@ -35,7 +35,7 @@
   (define-key sgml-mode-map (kbd "C-c z") 'zencoding-expand-line))
 
 (defvar diw-minor-mode-map (make-keymap) "diw-minor-mode keymap")
-(define-key diw-minor-mode-map  (kbd "C-c C-k") 'slime-eval-buffer)
+;;(define-key diw-minor-mode-map  (kbd "C-c C-k") 'slime-eval-buffer)
 (define-key diw-minor-mode-map  (kbd "M-RET") 'open-next-line)
 (define-key diw-minor-mode-map  (kbd "M-DEL") 'kill-whole-line)
 (define-key diw-minor-mode-map  (kbd "M-9") 'paredit-backward-slurp-sexp)

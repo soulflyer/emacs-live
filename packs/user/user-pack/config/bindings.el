@@ -1,4 +1,4 @@
-;; Place your bindings here.
+;; Place your bindings here.♯
 
 ;; For example:
 ;;(define-key global-map (kbd "C-+") 'text-scale-increase)
@@ -21,30 +21,37 @@
 (define-key scss-mode-map (kbd "RET") 'reindent-then-newline-and-indent)
 ;;(define-key feature-mode-map (kbd "RET") 'reindent-then-newline-and-indent)
 ;;(define-key html-mode-map (kbd "RET") 'newline-and-indent)
+;;(define-key css-mode-map (kbd "RET") 'reindent-then-newline-and-indent)
 (add-hook 'html-mode-hook 'my-html-mods)
 (defun my-html-mods ()
   "Add some stuff to html-mode"
   ;;(require 'rename-sgml-tag)
   ;;(define-key sgml-mode-map (kbd "C-c C-r") 'rename-sgml-tag)
   (define-key html-mode-map (kbd "RET") 'reindent-then-newline-and-indent))
+
+(add-hook 'css-mode-hook 'my-css-mods)
+(defun my-css-mods ()
+  (define-key css-mode-map (kbd "RET") 'reindent-then-newline-and-indent))
+
 (add-hook 'sgml-mode-hook 'my-sgml-mods)
 (defun my-sgml-mods ()
   "Add to sgml mode"
   (require 'rename-sgml-tag)
   (define-key sgml-mode-map (kbd "C-c C-r") 'rename-sgml-tag)
-  (define-key sgml-mode-map (kbd "C-c z") 'zencoding-expand-line))
+  (define-key sgml-mode-map (kbd "C-c z") 'zencoding-expand-line)
+  (define-key sgml-mode-map (kbd "RET") 'reindent-then-newline-and-indent))
 
 (defvar diw-minor-mode-map (make-keymap) "diw-minor-mode keymap")
 ;;(define-key diw-minor-mode-map  (kbd "C-c C-k") 'slime-eval-buffer)
 (define-key diw-minor-mode-map  (kbd "M-RET") 'open-next-line)
 (define-key diw-minor-mode-map  (kbd "M-DEL") 'kill-whole-line)
-(define-key diw-minor-mode-map  (kbd "M-9") 'paredit-backward-slurp-sexp)
-(define-key diw-minor-mode-map  (kbd "M-0") 'paredit-backward-barf-sexp)
-(define-key diw-minor-mode-map  (kbd "M-(") 'paredit-forward-barf-sexp)
-(define-key diw-minor-mode-map  (kbd "M-)") 'paredit-forward-slurp-sexp)
-(define-key diw-minor-mode-map  (kbd "M-}") 'paredit-splice-sexp)
-(define-key diw-minor-mode-map  (kbd "M-{") 'paredit-wrap-round)
-(define-key diw-minor-mode-map  (kbd "M-s") 'paredit-join-sexps)
+;; (define-key diw-minor-mode-map  (kbd "M-9") 'paredit-backward-slurp-sexp)
+;; (define-key diw-minor-mode-map  (kbd "M-0") 'paredit-backward-barf-sexp)
+;; (define-key diw-minor-mode-map  (kbd "M-(") 'paredit-forward-barf-sexp)
+;; (define-key diw-minor-mode-map  (kbd "M-)") 'paredit-forward-slurp-sexp)
+;; (define-key diw-minor-mode-map  (kbd "M-}") 'paredit-splice-sexp)
+;; (define-key diw-minor-mode-map  (kbd "M-{") 'paredit-wrap-round)
+;; (define-key diw-minor-mode-map  (kbd "M-s") 'paredit-join-sexps)
 (define-key diw-minor-mode-map  (kbd "C-x k") 'kill-this-buffer)
 (define-key diw-minor-mode-map  (kbd "s-w") 'delete-frame)
 (define-key diw-minor-mode-map  (kbd "C-j") 'eval-print-last-sexp)
@@ -68,6 +75,8 @@
 (define-key diw-minor-mode-map  (kbd "C-@") 'er/expand-region)
 (define-key diw-minor-mode-map  (kbd "M-2") 'er/contract-region)
 (define-key diw-minor-mode-map  (kbd "C-c o") 'org-todo-list)
+(define-key diw-minor-mode-map  (kbd "C-h") 'help)
+(define-key diw-minor-mode-map  (kbd "C-c C-e") 'wdired-change-to-wdired-mode)
 
 (define-minor-mode diw-minor-mode
   "A minor mode so that my key settings aren't shadowed by other major/minor modes"

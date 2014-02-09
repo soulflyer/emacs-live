@@ -17,8 +17,10 @@
 
 (define-key dired-mode-map (kbd "f") 'dired-make-file)
 
-(define-key ruby-mode-map (kbd "RET") 'reindent-then-newline-and-indent)
-(define-key scss-mode-map (kbd "RET") 'reindent-then-newline-and-indent)
+(define-key ruby-mode-map  (kbd "RET") 'reindent-then-newline-and-indent)
+(define-key scss-mode-map  (kbd "RET") 'reindent-then-newline-and-indent)
+(define-key diw-minor-mode-map (kbd "RET") 'reindent-then-newline-and-indent)
+
 ;;(define-key feature-mode-map (kbd "RET") 'reindent-then-newline-and-indent)
 ;;(define-key html-mode-map (kbd "RET") 'newline-and-indent)
 ;;(define-key css-mode-map (kbd "RET") 'reindent-then-newline-and-indent)

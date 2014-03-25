@@ -10,10 +10,6 @@
         path = packs/dev/clojure-pack/vendor/submodules/align-cljlet
         url = git://github.com/gstamp/align-cljlet.git
         ignore = untracked
-[submodule "packs/dev/clojure-pack/vendor/submodules/auto-complete"]
-        path = packs/dev/clojure-pack/vendor/submodules/auto-complete
-        url = git://github.com/samaaron/auto-complete.git
-        ignore = untracked
 [submodule "packs/dev/power-pack/vendor/submodules/volatile-highlights"]
         path = packs/dev/power-pack/vendor/submodules/volatile-highlights
         url = git://github.com/k-talo/volatile-highlights.el.git
@@ -78,12 +74,6 @@
 [submodule "packs/dev/git-pack/vendor/submodules/magit"]
         path = packs/dev/git-pack/vendor/submodules/magit
         url = git://github.com/magit/magit.git
-[submodule "packs/dev/clojure-pack/vendor/submodules/nrepl-eval-sexp-fu"]
-        path = packs/dev/clojure-pack/vendor/submodules/nrepl-eval-sexp-fu
-        url = git://github.com/samaaron/nrepl-eval-sexp-fu.git
-[submodule "packs/dev/clojure-pack/vendor/submodules/nrepl"]
-        path = packs/dev/clojure-pack/vendor/submodules/nrepl
-        url = git://github.com/samaaron/nrepl.el.git
 [submodule "packs/dev/lang-pack/vendor/submodules/js2"]
         path = packs/dev/lang-pack/vendor/submodules/js2
         url = git://github.com/mooz/js2-mode.git
@@ -144,9 +134,21 @@
 [submodule "packs/dev/power-pack/vendor/submodules/wc-mode"]
 	path = packs/dev/power-pack/vendor/submodules/wc-mode
 	url = git://github.com/bnbeckwith/wc-mode.git
-[submodule "packs/dev/clojure-pack/vendor/submodules/smartparens"]
-	path = packs/dev/clojure-pack/vendor/submodules/smartparens
-	url = git://github.com/Fuco1/smartparens.git
 [submodule "packs/dev/lang-pack/vendor/submodules/haskell"]
 	path = packs/dev/lang-pack/vendor/submodules/haskell
 	url = git://github.com/haskell/haskell-mode.git
+[submodule "packs/dev/clojure-pack/vendor/submodules/cider"]
+	path = packs/dev/clojure-pack/vendor/submodules/cider
+	url = git://github.com/clojure-emacs/cider.git
+[submodule "packs/dev/clojure-pack/vendor/submodules/eval-sexp-fu"]
+	path = packs/dev/clojure-pack/vendor/submodules/eval-sexp-fu
+	url = git://github.com/hchbaw/eval-sexp-fu.el.git
+[submodule "packs/dev/clojure-pack/vendor/submodules/auto-complete"]
+	path = packs/dev/clojure-pack/vendor/submodules/auto-complete
+	url = git://github.com/auto-complete/auto-complete.git
+[submodule "packs/dev/clojure-pack/vendor/submodules/clj-refactor"]
+	path = packs/dev/clojure-pack/vendor/submodules/clj-refactor
+	url = git://github.com/magnars/clj-refactor.el.git
+[submodule "packs/dev/foundation-pack/vendor/submodules/epl"]
+        path = packs/dev/foundation-pack/vendor/submodules/epl
+        url = git://github.com/cask/epl.git

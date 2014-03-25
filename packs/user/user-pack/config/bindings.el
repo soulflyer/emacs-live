@@ -19,7 +19,7 @@
 
 (define-key ruby-mode-map  (kbd "RET") 'reindent-then-newline-and-indent)
 (define-key scss-mode-map  (kbd "RET") 'reindent-then-newline-and-indent)
-(define-key shell-mode-map (kbd "RET") 'reindent-then-newline-and-indent)
+;;(define-key sh-mode-map (kbd "RET") 'reindent-then-newline-and-indent)
 
 
 ;;(define-key feature-mode-map (kbd "RET") 'reindent-then-newline-and-indent)

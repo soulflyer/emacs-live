@@ -15,8 +15,11 @@
 ;;(define-key slime-repl-mode-map (kbd "<up>") 'slime-repl-backward-input)
 ;;(define-key slime-repl-mode-map (kbd "<down>") 'slime-repl-next-input)
 
-(define-key dired-mode-map (kbd "f") 'dired-make-file)
+;; This line may make all the other RET redefines unnecessary....
+(define-key prog-mode-map (kbd "RET") 'reindent-then-newline-and-indent)
 
+(define-key dired-mode-map (kbd "f") 'dired-make-file)
+(define-key js2-mode-map   (kbd "RET") 'reindent-then-newline-and-indent)
 (define-key ruby-mode-map  (kbd "RET") 'reindent-then-newline-and-indent)
 (define-key scss-mode-map  (kbd "RET") 'reindent-then-newline-and-indent)
 ;;(define-key sh-mode-map (kbd "RET") 'reindent-then-newline-and-indent)

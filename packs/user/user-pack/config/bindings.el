@@ -8,13 +8,6 @@
 (global-set-key (kbd "C-c C-n") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-c a") 'mc/mark-all-like-this)
 
-;;
-;; Put some bindings in my personal minor mode so
-;; they aren't overridden by other modes
-;;
-;;(define-key slime-repl-mode-map (kbd "<up>") 'slime-repl-backward-input)
-;;(define-key slime-repl-mode-map (kbd "<down>") 'slime-repl-next-input)
-
 ;; This line may make all the other RET redefines unnecessary....
 (define-key prog-mode-map (kbd "RET") 'reindent-then-newline-and-indent)
 
@@ -22,18 +15,6 @@
 (define-key js2-mode-map   (kbd "RET") 'reindent-then-newline-and-indent)
 (define-key ruby-mode-map  (kbd "RET") 'reindent-then-newline-and-indent)
 (define-key scss-mode-map  (kbd "RET") 'reindent-then-newline-and-indent)
-;;(define-key sh-mode-map (kbd "RET") 'reindent-then-newline-and-indent)
-
-
-;;(define-key feature-mode-map (kbd "RET") 'reindent-then-newline-and-indent)
-;;(define-key html-mode-map (kbd "RET") 'newline-and-indent)
-;;(define-key css-mode-map (kbd "RET") 'reindent-then-newline-and-indent)
-(add-hook 'html-mode-hook 'my-html-mods)
-(defun my-html-mods ()
-  "Add some stuff to html-mode"
-  ;;(require 'rename-sgml-tag)
-  ;;(define-key sgml-mode-map (kbd "C-c C-r") 'rename-sgml-tag)
-  (define-key html-mode-map (kbd "RET") 'reindent-then-newline-and-indent))
 
 (add-hook 'css-mode-hook 'my-css-mods)
 (defun my-css-mods ()
@@ -42,7 +23,6 @@
 (add-hook 'sgml-mode-hook 'my-sgml-mods)
 (defun my-sgml-mods ()
   "Add to sgml mode"
-  (require 'rename-sgml-tag)
   (define-key sgml-mode-map (kbd "C-c C-r") 'rename-sgml-tag)
   (define-key sgml-mode-map (kbd "C-c z") 'zencoding-expand-line)
   (define-key sgml-mode-map (kbd "RET") 'reindent-then-newline-and-indent))

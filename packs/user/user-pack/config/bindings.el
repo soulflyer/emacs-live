@@ -63,6 +63,8 @@
 (define-key diw-minor-mode-map  (kbd "C-c o") 'org-todo-list)
 (define-key diw-minor-mode-map  (kbd "C-h") 'help)
 (define-key diw-minor-mode-map  (kbd "C-c C-e") 'wdired-change-to-wdired-mode)
+(define-key diw-minor-mode-map  (kbd "C-c [") 'paredit-forward)
+(define-key diw-minor-mode-map  (kbd "C-c ]") 'paredit-backward)
 
 (define-minor-mode diw-minor-mode
   "A minor mode so that my key settings aren't shadowed by other major/minor modes"

@@ -4,10 +4,13 @@
 (setq mc/cmds-to-run-for-all
       '(
         help
+        yas-expand
         ))
 
 (setq mc/cmds-to-run-once
       '(
         cua-delete-region
         handle-switch-frame
+        nxml-electric-slash
+        smex
         ))

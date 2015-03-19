@@ -16,6 +16,7 @@
 (add-to-list 'same-window-regexps "\*Colors\*")
 (add-to-list 'same-window-regexps "\*Org Agenda\*")
 (add-to-list 'same-window-regexps "\*magit\*")
+(add-to-list 'same-window-regexps "\*cider-repl\*")
 ;;(add-to-list 'org-file-apps '("\\.jpg\\'" . default) t)
 
 (setq tramp-default-method "sshx")
@@ -304,8 +305,13 @@ and overlay is highlighted between MK and END-MK."
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
-(require 'json-mode)
+;;(require 'json-mode)
 (require 'package)
+
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/") t)
 (package-initialize)
+
+(autoload 'applescript-mode "applescript-mode" "Major mode for editing AppleScript source." t)
+(add-to-list 'auto-mode-alist '("\\.applescript$" . applescript-mode))
+(add-hook 'after-init-hook #'global-flycheck-mode)

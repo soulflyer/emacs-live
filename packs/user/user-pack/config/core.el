@@ -1,3 +1,6 @@
+;;; package --- summary:
+;;; Commentary:
+;;; Code:
 (require 'iy-go-to-char)
 ;;(setq same-window-regexps '("."))
 ;;(setq same-window-regexps nil)
@@ -20,7 +23,10 @@
 ;;(add-to-list 'org-file-apps '("\\.jpg\\'" . default) t)
 
 (setq tramp-default-method "sshx")
+(electric-pair-mode 1)
 
+(setq web-mode-enable-auto-pairing t)
+(setq web-mode-enable-auto-closing t)
 (eval-after-load "org"
   '(progn
      ;; .txt files aren't in the list initially, but in case that changes

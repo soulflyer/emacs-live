@@ -7,17 +7,14 @@
 (global-set-key (kbd "C-c C-p") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-n") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-c a") 'mc/mark-all-like-this)
-
 ;; This line may make all the other RET redefines unnecessary....
 (define-key prog-mode-map (kbd "RET") 'reindent-then-newline-and-indent)
-
 (define-key dired-mode-map (kbd "f") 'dired-make-file)
 (define-key dired-mode-map  (kbd "C-c C-e") 'wdired-change-to-wdired-mode)
 
 (define-key js2-mode-map   (kbd "RET") 'reindent-then-newline-and-indent)
 (define-key ruby-mode-map  (kbd "RET") 'reindent-then-newline-and-indent)
-(define-key scss-mode-map  (kbd "RET") 'reindent-then-newline-and-indent)
-
+;;(define-key scss-mode-map  (kbd "RET") 'reindent-then-newline-and-indent)
 (add-hook 'css-mode-hook 'my-css-mods)
 (defun my-css-mods ()
   (define-key css-mode-map (kbd "RET") 'reindent-then-newline-and-indent))
@@ -28,7 +25,7 @@
   (define-key sgml-mode-map (kbd "C-c C-r") 'rename-sgml-tag)
   (define-key sgml-mode-map (kbd "C-c z") 'zencoding-expand-line)
   (define-key sgml-mode-map (kbd "RET") 'reindent-then-newline-and-indent))
-
+(message "hello 1")
 (defvar diw-minor-mode-map (make-keymap) "diw-minor-mode keymap")
 ;;(define-key diw-minor-mode-map  (kbd "C-c C-k") 'slime-eval-buffer)
 (define-key diw-minor-mode-map  (kbd "M-RET") 'open-next-line)

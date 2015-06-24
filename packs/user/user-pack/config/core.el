@@ -109,14 +109,6 @@
 (browse-kill-ring-default-keybindings)
 (require 'scss-mode)
 
-;;This stuff needed by xiki which looks cool but doesn't work with command line emacs yet
-;;(add-to-list 'load-path "/Users/iain/.rvm/rubies/ruby-1.9.3-p194/share/emacs/site-lisp")
-;;(require 'el4r)
-;;(el4r-boot)
-
-;;(live-add-pack-lib "rinari")
-;;(require 'rinari)
-
 (require 'inf-ruby)
 (autoload 'inf-ruby "inf-ruby" "Run an inferior Ruby process" t)
 (autoload 'inf-ruby-setup-keybindings "inf-ruby" "" t)
@@ -125,7 +117,6 @@
 
 (require 'zencoding-mode)
 (add-hook 'sgml-mode-hook 'zencoding-mode)
-
 (add-hook 'ruby-mode-hook 'paredit-mode)
 
 ;; Enable paredit for a couple for non lisp modes; tweak
@@ -140,11 +131,6 @@
 
 (live-add-pack-lib "expand-region.el")
 (require 'expand-region)
-
-;;(live-add-pack-lib "mark-multiple")
-;;(require 'rename-sgml-tag)
-;;(require 'inline-string-rectangle)
-;;(require 'mark-more-like-this)
 
 (live-add-pack-lib "multiple-cursors.el")
 (require 'multiple-cursors)
@@ -309,15 +295,15 @@ and overlay is highlighted between MK and END-MK."
 (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
-
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
-;;(require 'json-mode)
+;; (require 'json-mode)
 (require 'package)
 
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/") t)
-(package-initialize)
 
+(package-initialize)
 (autoload 'applescript-mode "applescript-mode" "Major mode for editing AppleScript source." t)
 (add-to-list 'auto-mode-alist '("\\.applescript$" . applescript-mode))
+;; This will cause "Zoning.." problem if flycheck is not installed (package-install)
 (add-hook 'after-init-hook #'global-flycheck-mode)

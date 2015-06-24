@@ -26,3 +26,5 @@ tmp/*
 swank/*
 .tmux
 elpa
+smex-items
+ido.last

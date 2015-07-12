@@ -135,6 +135,10 @@
 (live-add-pack-lib "multiple-cursors.el")
 (require 'multiple-cursors)
 
+(live-add-pack-lib "jade-mode")
+(require 'sws-mode)
+(require 'jade-mode)
+
 ;; Some stuff from emacs rocks
 (defun untabify-buffer ()
   (interactive)

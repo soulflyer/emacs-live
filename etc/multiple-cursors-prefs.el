@@ -4,6 +4,7 @@
 (setq mc/cmds-to-run-for-all
       '(
         help
+        scroll-other-window-down
         yas-expand
         ))
 
@@ -12,5 +13,6 @@
         cua-delete-region
         handle-switch-frame
         nxml-electric-slash
+        reindent-then-newline-and-indent
         smex
         ))

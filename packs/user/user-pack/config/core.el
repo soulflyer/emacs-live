@@ -312,3 +312,7 @@ and overlay is highlighted between MK and END-MK."
 (add-to-list 'auto-mode-alist '("\\.applescript$" . applescript-mode))
 ;; This will cause "Zoning.." problem if flycheck is not installed (package-install)
 (add-hook 'after-init-hook #'global-flycheck-mode)
+
+(autoload 'muttrc-mode "muttrc-mode.el" "Major mode to edit muttrc files" t)
+(setq auto-mode-alist (append '(("muttrc\\'" . muttrc-mode)) auto-mode-alist))
+;;; core.el ends here

@@ -301,3 +301,7 @@ and overlay is highlighted between MK and END-MK."
 (add-to-list 'auto-mode-alist '("\\.applescript$" . applescript-mode))
 ;; This will cause "Zoning.." problem if flycheck is not installed (package-install)
 (add-hook 'after-init-hook #'global-flycheck-mode)
+(require 'ls-lisp)
+(setq ls-lisp-use-insert-directory-program nil)
+(setq ls-lisp-verbosity '(uid))
+;;;

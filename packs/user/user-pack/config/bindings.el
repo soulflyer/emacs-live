@@ -10,6 +10,8 @@
 ;; This line may make all the other RET redefines unnecessary....
 (define-key prog-mode-map (kbd "RET") 'reindent-then-newline-and-indent)
 (define-key dired-mode-map (kbd "f") 'dired-make-file)
+(define-key dired-mode-map  (kbd "C-c C-e") 'wdired-change-to-wdired-mode)
+
 (define-key js2-mode-map   (kbd "RET") 'reindent-then-newline-and-indent)
 (define-key ruby-mode-map  (kbd "RET") 'reindent-then-newline-and-indent)
 ;;(define-key scss-mode-map  (kbd "RET") 'reindent-then-newline-and-indent)
@@ -59,10 +61,10 @@
 (define-key diw-minor-mode-map  (kbd "M-2") 'er/contract-region)
 (define-key diw-minor-mode-map  (kbd "C-c o") 'org-todo-list)
 (define-key diw-minor-mode-map  (kbd "C-h") 'help)
-(define-key diw-minor-mode-map  (kbd "C-c C-e") 'wdired-change-to-wdired-mode)
 (define-key diw-minor-mode-map  (kbd "C-c [") 'paredit-forward)
 (define-key diw-minor-mode-map  (kbd "C-c ]") 'paredit-backward)
-
+(define-key diw-minor-mode-map  (kbd "C-c q") 'cider-quit)
 (define-minor-mode diw-minor-mode
   "A minor mode so that my key settings aren't shadowed by other major/minor modes"
   t " diw" 'diw-minor-mode-map)
+;;;bindings.el ends here

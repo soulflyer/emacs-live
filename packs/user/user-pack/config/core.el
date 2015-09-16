@@ -1,3 +1,6 @@
+;;; package --- summary:
+;;; Commentary:
+;;; Code:
 (require 'iy-go-to-char)
 ;;(setq same-window-regexps '("."))
 ;;(setq same-window-regexps nil)
@@ -20,7 +23,10 @@
 ;;(add-to-list 'org-file-apps '("\\.jpg\\'" . default) t)
 
 (setq tramp-default-method "sshx")
+(electric-pair-mode 1)
 
+(setq web-mode-enable-auto-pairing t)
+(setq web-mode-enable-auto-closing t)
 (eval-after-load "org"
   '(progn
      ;; .txt files aren't in the list initially, but in case that changes
@@ -128,6 +134,10 @@
 
 (live-add-pack-lib "multiple-cursors.el")
 (require 'multiple-cursors)
+
+(live-add-pack-lib "jade-mode")
+(require 'sws-mode)
+(require 'jade-mode)
 
 ;; Some stuff from emacs rocks
 (defun untabify-buffer ()
@@ -291,6 +301,7 @@ and overlay is highlighted between MK and END-MK."
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 ;; (require 'json-mode)
+
 (require 'package)
 
 (add-to-list 'package-archives
@@ -304,4 +315,8 @@ and overlay is highlighted between MK and END-MK."
 (require 'ls-lisp)
 (setq ls-lisp-use-insert-directory-program nil)
 (setq ls-lisp-verbosity '(uid))
-;;;
+
+
+(autoload 'muttrc-mode "muttrc-mode.el" "Major mode to edit muttrc files" t)
+(setq auto-mode-alist (append '(("muttrc\\'" . muttrc-mode)) auto-mode-alist))
+;;; core.el ends here

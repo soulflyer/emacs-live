@@ -12,6 +12,10 @@
 (define-key dired-mode-map (kbd "f") 'dired-make-file)
 (define-key dired-mode-map  (kbd "C-c C-e") 'wdired-change-to-wdired-mode)
 
+(define-key cider-repl-mode-map (kbd "<up>") 'cider-repl-previous-input)
+(define-key cider-repl-mode-map (kbd "<down>") 'cider-repl-next-input)
+(define-key cider-repl-mode-map (kbd "C-c C-c") 'backward-kill-sexp)
+
 (define-key js2-mode-map   (kbd "RET") 'reindent-then-newline-and-indent)
 (define-key ruby-mode-map  (kbd "RET") 'reindent-then-newline-and-indent)
 ;;(define-key scss-mode-map  (kbd "RET") 'reindent-then-newline-and-indent)

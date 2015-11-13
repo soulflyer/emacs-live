@@ -20,6 +20,7 @@
 (add-to-list 'same-window-regexps "\*Org Agenda\*")
 (add-to-list 'same-window-regexps "\*magit\*")
 (add-to-list 'same-window-regexps "\*cider-repl\*")
+(add-to-list 'same-window-regexps "\*cider-result\*")
 ;;(add-to-list 'org-file-apps '("\\.jpg\\'" . default) t)
 
 (setq tramp-default-method "sshx")

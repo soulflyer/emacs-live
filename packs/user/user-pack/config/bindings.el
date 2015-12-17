@@ -1,5 +1,5 @@
 ;; Place your bindings here.♯
-
+;;; Code:
 ;; For example:
 ;;(define-key global-map (kbd "C-+") 'text-scale-increase)
 ;;(define-key global-map (kbd "C--") 'text-scale-decrease)
@@ -65,8 +65,9 @@
 (define-key diw-minor-mode-map  (kbd "M-2") 'er/contract-region)
 (define-key diw-minor-mode-map  (kbd "C-c o") 'org-todo-list)
 (define-key diw-minor-mode-map  (kbd "C-h") 'help)
-(define-key diw-minor-mode-map  (kbd "C-c [") 'paredit-forward)
-(define-key diw-minor-mode-map  (kbd "C-c ]") 'paredit-backward)
+(define-key diw-minor-mode-map  (kbd "C-c C-j") 'cider-jack-in)
+;;(define-key diw-minor-mode-map  (kbd "C-c [") 'paredit-forward)
+;;(define-key diw-minor-mode-map  (kbd "C-c ]") 'paredit-backward)
 (define-key diw-minor-mode-map  (kbd "C-c q") 'cider-quit)
 (define-minor-mode diw-minor-mode
   "A minor mode so that my key settings aren't shadowed by other major/minor modes"

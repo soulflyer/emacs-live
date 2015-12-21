@@ -307,6 +307,9 @@ and overlay is highlighted between MK and END-MK."
 
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/") t)
+(add-to-list 'package-archives
+                          '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+(add-to-list 'package-pinned-packages '(cider . "melpa-stable") t)
 
 (package-initialize)
 (autoload 'applescript-mode "applescript-mode" "Major mode for editing AppleScript source." t)
@@ -317,7 +320,7 @@ and overlay is highlighted between MK and END-MK."
 (setq ls-lisp-use-insert-directory-program nil)
 (setq ls-lisp-verbosity '(uid))
 
-
+(beacon-mode 1)
 (autoload 'muttrc-mode "muttrc-mode.el" "Major mode to edit muttrc files" t)
 (setq auto-mode-alist (append '(("muttrc\\'" . muttrc-mode)) auto-mode-alist))
 ;;; core.el ends here

@@ -20,6 +20,7 @@
 (add-to-list 'same-window-regexps "\*Org Agenda\*")
 (add-to-list 'same-window-regexps "\*magit\*")
 (add-to-list 'same-window-regexps "\*cider-repl\*")
+(add-to-list 'same-window-regexps "\*cider-doc\*")
 (add-to-list 'same-window-regexps "\*cider-result\*")
 ;;(add-to-list 'org-file-apps '("\\.jpg\\'" . default) t)
 
@@ -308,7 +309,10 @@ and overlay is highlighted between MK and END-MK."
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/") t)
 (add-to-list 'package-archives
-                          '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+             '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+(add-to-list 'package-archives
+             '("marmalade" . "http://marmalade-repo.org/packages/") t)
+
 (add-to-list 'package-pinned-packages '(cider . "melpa-stable") t)
 
 (package-initialize)
@@ -319,6 +323,7 @@ and overlay is highlighted between MK and END-MK."
 (require 'ls-lisp)
 (setq ls-lisp-use-insert-directory-program nil)
 (setq ls-lisp-verbosity '(uid))
+(setq default-tab-width 2)
 
 (beacon-mode 1)
 (autoload 'muttrc-mode "muttrc-mode.el" "Major mode to edit muttrc files" t)

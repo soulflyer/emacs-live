@@ -34,6 +34,7 @@
 ;;(define-key diw-minor-mode-map  (kbd "C-c C-k") 'slime-eval-buffer)
 (define-key diw-minor-mode-map  (kbd "M-RET") 'open-next-line)
 (define-key diw-minor-mode-map  (kbd "M-DEL") 'kill-whole-line)
+(define-key diw-minor-mode-map  (kbd "C-M-0") 'paredit-forward-barf-sexp)
 ;; (define-key diw-minor-mode-map  (kbd "M-9") 'paredit-backward-slurp-sexp)
 ;; (define-key diw-minor-mode-map  (kbd "M-0") 'paredit-backward-barf-sexp)
 ;; (define-key diw-minor-mode-map  (kbd "M-(") 'paredit-forward-barf-sexp)

@@ -5,6 +5,7 @@
       '(
         help
         scroll-other-window-down
+        undo-tree-visualize
         yas-expand
         ))
 

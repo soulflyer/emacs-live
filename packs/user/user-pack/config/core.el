@@ -22,6 +22,7 @@
 (add-to-list 'same-window-regexps "\*cider-repl\*")
 (add-to-list 'same-window-regexps "\*cider-doc\*")
 (add-to-list 'same-window-regexps "\*cider-result\*")
+(add-to-list 'same-window-regexps "\*YASnippet tables\*")
 ;;(add-to-list 'org-file-apps '("\\.jpg\\'" . default) t)
 
 (setq tramp-default-method "sshx")

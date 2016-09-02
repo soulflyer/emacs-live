@@ -26,6 +26,7 @@
       ("-idx" file))
      ("\\.\\(?:jp?g\\|png\\)\\'" "open"
       (file)))))
+ '(same-window-buffer-names (quote ("")))
  '(sclang-auto-scroll-post-buffer t)
  '(sclang-eval-line-forward nil)
  '(sclang-help-path (quote ("/Applications/SuperCollider/Help"))))

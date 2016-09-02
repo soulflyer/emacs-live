@@ -44,7 +44,7 @@
 ;; (define-key diw-minor-mode-map  (kbd "M-s") 'paredit-join-sexps)
 (define-key diw-minor-mode-map  (kbd "C-x k") 'kill-this-buffer)
 (define-key diw-minor-mode-map  (kbd "s-w") 'delete-frame)
-(define-key diw-minor-mode-map  (kbd "C-j") 'eval-print-last-sexp)
+;; (define-key diw-minor-mode-map  (kbd "C-j") 'eval-print-last-sexp)
 (define-key diw-minor-mode-map  (kbd "s-o") 'ido-find-file)
 (define-key diw-minor-mode-map  (kbd "C-x SPC") 'cua-set-mark)
 (define-key diw-minor-mode-map  (kbd "C-x C-d") 'ido-dired)

@@ -3,6 +3,7 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+        cljr-expand-let
         help
         scroll-other-window-down
         undo-tree-visualize
@@ -14,6 +15,7 @@
         cua-delete-region
         handle-switch-frame
         nxml-electric-slash
+        paredit-forward-delete
         reindent-then-newline-and-indent
         smex
         ))

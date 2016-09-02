@@ -2,9 +2,12 @@
 ;;; Commentary:
 ;;; Code:
 (require 'iy-go-to-char)
+(require 'mu4e)
 ;;(setq same-window-regexps '("."))
 ;;(setq same-window-regexps nil)
 ;;(add-to-list 'same-window-regexps ".")
+
+(setq ns-pop-up-frames nil)
 (add-to-list 'same-window-regexps "\*Help\*")
 (add-to-list 'same-window-regexps "\*rake\*")
 (add-to-list 'same-window-regexps "\*Apropos\*")
@@ -325,7 +328,7 @@ and overlay is highlighted between MK and END-MK."
 (setq ls-lisp-use-insert-directory-program nil)
 (setq ls-lisp-verbosity '(uid))
 (setq default-tab-width 2)
-
+(setq cider-repl-history-file "~/.cider-history")
 (beacon-mode 1)
 (autoload 'muttrc-mode "muttrc-mode.el" "Major mode to edit muttrc files" t)
 (setq auto-mode-alist (append '(("muttrc\\'" . muttrc-mode)) auto-mode-alist))

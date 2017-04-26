@@ -1,8 +1,28 @@
 ;;; package --- summary:
 ;;; Commentary:
 ;;; Code:
+(message "starting core.el")
 (require 'iy-go-to-char)
-(require 'mu4e)
+;; (add-to-list 'load-path "/opt/local/share/emacs/site-lisp/mu4e")
+
+
+
+;; (require 'mu4e)
+;; ;;(require 'notmuch)
+;; (setq
+;;  mu4e-maildir "~/Mail"
+;;  mu4e-sent-folder "/INBOX.sent"
+;;  mu4e-trash-folder "/INBOX.trash"
+;;  mu4e-confirm-quit nil
+;;  mu4e-view-show-images t)
+;; (add-to-list 'mu4e-headers-actions
+;;               '("in browser" . mu4e-action-view-in-browser) t)
+;; (add-to-list 'mu4e-view-actions
+;;               '("in browser" . mu4e-action-view-in-browser) t)
+;; (setq mu4e-html2text-command
+;;       "textutil -stdin -format html -convert txt -stdout")
+;;(mu4e-maildirs-extension)
+
 ;;(setq same-window-regexps '("."))
 ;;(setq same-window-regexps nil)
 ;;(add-to-list 'same-window-regexps ".")
@@ -28,6 +48,7 @@
 (add-to-list 'same-window-regexps "\*YASnippet tables\*")
 ;;(add-to-list 'org-file-apps '("\\.jpg\\'" . default) t)
 
+(message "core.el done same-window")
 (setq tramp-default-method "sshx")
 (electric-pair-mode 1)
 
@@ -102,7 +123,7 @@
          "* %?%i")
         ("ts" "Starfish" entry (file+headline org-taxonomy-file "Starfish")
          "* %?%i")))
-
+(message "core.el done org stuff")
 ;;(autoload 'html-helper-mode "html-helper-mode" "Yay HTML" t)
 ;;(setq-default  cursor-type 'bar)
 (setq show-paren-style (quote expression))
@@ -134,7 +155,7 @@
                (add-to-list (make-local-variable 'paredit-space-for-delimiter-predicates)
                             (lambda (_ _) nil))
                (enable-paredit-mode))))
-
+(message "core.el done paredit stuff")
 (live-add-pack-lib "expand-region.el")
 (require 'expand-region)
 
@@ -174,7 +195,7 @@ Including indent-buffer, which should not be called automatically on save."
   (cleanup-buffer))
 
 ;;end of stuff from emacs rocks
-
+(message "core.el done emacs rocks stuff")
 ;;(live-add-pack-lib "cucumber.el")
 ;;(require 'feature-mode)
 ;;(add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
@@ -287,16 +308,16 @@ and overlay is highlighted between MK and END-MK."
          ;; We want a fringe arrow (instead of highlighting).
          (setq next-error-overlay-arrow-position
                    (copy-marker (line-beginning-position)))))))
-
+(message "core.el done grep stuff")
 ;; Add file creation to dired
-(defun dired-make-file (new-file-name)
-  (interactive "sFile name: ")
-  (shell-command (concat "touch " new-file-name))
-  (message "created %s" new-file-name)
-  (message "major mode %s" major-mode)
-  (if (string= major-mode "dired-mode")
-      (revert-buffer)))
-
+;;(defun dired-make-file (new-file-name)
+;;  (interactive "sFile name: ")
+;;  (shell-command (concat "touch " new-file-name))
+;;  (message "created %s" new-file-name)
+;;  (message "major mode %s" major-mode)
+;;  (if (string= major-mode "dired-mode")
+;;      (revert-buffer)))
+(message "core.el done dired"
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
@@ -307,7 +328,7 @@ and overlay is highlighted between MK and END-MK."
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 ;; (require 'json-mode)
-
+(message "core.el done html stuff")
 (require 'package)
 
 (add-to-list 'package-archives
@@ -320,10 +341,12 @@ and overlay is highlighted between MK and END-MK."
 (add-to-list 'package-pinned-packages '(cider . "melpa-stable") t)
 
 (package-initialize)
+(message "core.el done package stuff")
 (autoload 'applescript-mode "applescript-mode" "Major mode for editing AppleScript source." t)
 (add-to-list 'auto-mode-alist '("\\.applescript$" . applescript-mode))
 ;; This will cause "Zoning.." problem if flycheck is not installed (package-install)
-(add-hook 'after-init-hook #'global-flycheck-mode)
+;;(add-hook 'after-init-hook #'global-flycheck-mode)
+(message "core.el done applescript stuff")
 (require 'ls-lisp)
 (setq ls-lisp-use-insert-directory-program nil)
 (setq ls-lisp-verbosity '(uid))
@@ -332,4 +355,5 @@ and overlay is highlighted between MK and END-MK."
 (beacon-mode 1)
 (autoload 'muttrc-mode "muttrc-mode.el" "Major mode to edit muttrc files" t)
 (setq auto-mode-alist (append '(("muttrc\\'" . muttrc-mode)) auto-mode-alist))
+(message "ending core.el")
 ;;; core.el ends here

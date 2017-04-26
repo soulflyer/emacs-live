@@ -29,7 +29,8 @@
  '(same-window-buffer-names (quote ("")))
  '(sclang-auto-scroll-post-buffer t)
  '(sclang-eval-line-forward nil)
- '(sclang-help-path (quote ("/Applications/SuperCollider/Help"))))
+ '(sclang-help-path (quote ("/Applications/SuperCollider/Help")))
+ '(send-mail-function (quote smtpmail-send-it)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

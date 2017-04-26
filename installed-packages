@@ -1,0 +1,43 @@
+  ztree              1.0.5         available  Text mode directory tree
+  2048-game          20151026.1233 installed  play 2048 in Emacs
+  4clojure           20131014.1507 installed  Open and evaluate 4clojure.com questions
+  ac-cider           20151012.308  installed  Clojure auto-complete sources using CIDER
+  apples-mode        0.0.2         installed  Major mode for editing and executing AppleScript code
+  applescript-mode   20120205.307  installed  Major mode for editing AppleScript source
+  async              20151123.256  installed  Asynchronous processing in Emacs
+  auto-complete      20151211.227  installed  Auto Completion for GNU Emacs
+  beacon             0.5.1         installed  Highlight the cursor whenever the window scrolls
+  cider              0.10.0        installed  Clojure Interactive Development Environment that Rocks
+  clojars            20151215.1233 installed  clojars.org search interface
+  clojure-mode       20151213.1038 installed  Major mode for Clojure code
+  company            20160829.1206 installed  Modular text completion framework
+  dash               20151216.1315 installed  A modern list library for Emacs
+  discover-my-major  20151008.12   installed  Discover key bindings and their meaning for the current Emacs major mode
+  epl                20150517.433  installed  Emacs Package Library
+  expectations-mode  0.0.5         installed  Minor mode for expectations tests
+  feature-mode       0.4           installed  Major mode for editing Gherkin (i.e. Cucumber) user stories
+  flycheck           20151216.702  installed  On-the-fly syntax checking
+  flymake-easy       20140818.55   installed  Helpers for easily building flymake checkers
+  flymake-php        0.5           installed  A flymake handler for php-mode files
+  helm-core          20151213.17   installed  Development files for Helm
+  jade-mode          1.0.0         installed  Major mode for editing .jade files
+  kv                 20140108.734  installed  key/value data structure functions
+  let-alist          1.0.4         installed  Easily let-bind values of an assoc-list by their names
+  maildir            0.0.28        installed  Simple maildir based MUA.
+  makey              20131231.630  installed  interactive commandline mode
+  mu4e-maildirs-e... 20160911.41   installed  Show mu4e maildirs summary in mu4e-main-view
+  nm                 20151110.1110 installed  NEVERMORE: an email interface for Notmuch
+  noflet             20141102.654  installed  locally override functions
+  notmuch            20160912.412  installed  run notmuch within emacs
+  peg                20150707.2341 installed  Parsing Expression Grammars in Emacs Lisp
+  php+-mode          20121129.1252 installed  A better PHP mode with Zend Framework 1 support.
+  php-mode           1.17.0        installed  Major mode for editing PHP code
+  pkg-info           20150517.443  installed  Information about packages
+  popup              20151125.542  installed  Visual Popup User Interface
+  queue              0.1.1         installed  Queue data structure
+  ranger             0.9.8.1       installed  Make dired more like ranger
+  request            20140316.417  installed  Compatible layer for URL request in Emacs
+  s                  20160711.525  installed  The long lost Emacs string manipulation library.
+  seq                1.11          installed  Sequence manipulation functions
+  spinner            1.4           installed  Add spinners and progress-bars to the mode-line for ongoing operations
+  allout             2.3           built-in   extensive outline mode for use alone and with other modes

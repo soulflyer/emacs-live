@@ -24,8 +24,9 @@ tramp
 tmp/*
 .smex-items
 swank/*
-.tmux
-elpa
-smex-items
 ido.last
-.#*
+smex-items
+elpa
+.tmux
+.gitignore
+packs/user

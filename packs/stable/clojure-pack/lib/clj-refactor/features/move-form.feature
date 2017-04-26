@@ -4,6 +4,7 @@ Feature: Move forms
     Given I have a project "cljr" in "tmp"
     And I have a clojure-file "tmp/src/cljr/src.clj"
     And I have a clojure-file "tmp/src/cljr/dest.clj"
+    And I have a clojure-file "tmp/src/cljr/target.clj"
     And I open file "tmp/src/cljr/dest.clj"
     And I clear the buffer
     And I insert:
@@ -12,6 +13,14 @@ Feature: Move forms
 
     (defn frobinator [a b]
       (+ a b))
+    """
+    And I open file "tmp/src/cljr/target.clj"
+    And I clear the buffer
+    And I insert:
+    """
+    (ns cljr.target)
+
+    (defn really-do-it [x] (println x))
     """
     And I open file "tmp/src/cljr/src.clj"
     And I clear the buffer
@@ -27,6 +36,7 @@ Feature: Move forms
     (add 1 2)
     """
     And the cursor is inside the first defn form
+    And I disable cljr-clean-ns
     And I start an action chain
     And I press "C-! mf"
     And I type "dest.clj"
@@ -71,7 +81,8 @@ Feature: Move forms
     Then I should see:
     """
     (ns cljr.src
-      (:require [cljr.dest :refer [foo]]))
+      (:require [clojure.string :as str]
+                [cljr.dest :refer [foo]]))
 
     (foo 1 2)
     """
@@ -148,7 +159,7 @@ Feature: Move forms
     When I insert:
     """
     (ns cljr.src
-      (:require [cljr.dest :refer [this that]]))
+      (:require [clojure.string :refer [join split]]))
 
     (defn add [a b]
       (+ a b))
@@ -164,14 +175,16 @@ Feature: Move forms
     Then I should see:
     """
     (ns cljr.src
-      (:require [cljr.dest :refer [this that add]]))
+      (:require [clojure.string :refer [join split]]
+                [cljr.dest :refer [add]]))
 
     (add (this 1) (that 2))
     """
     And I open file "tmp/src/cljr/dest.clj"
     Then I should see:
     """
-    (ns cljr.dest)
+    (ns cljr.dest
+      (:require [clojure.string :refer [join split]]))
 
     (defn frobinator [a b]
       (+ a b))
@@ -192,6 +205,7 @@ Feature: Move forms
             [cljr.form]
             [some.lib ns1 ns2 ns3])
       (:require [cljr.foobar :as foo]
+                [clojure.string :refer [join split]]
                 [cljr.dest :refer [this that]])
       (:refer-clojure :exclude [this that])
       (:import [java.util.Date]))
@@ -236,7 +250,7 @@ Feature: Move forms
     And I press "M-<"
     And I press "C-u 13 C-n"
     And I press "C-SPC"
-    And I press "C-u 29 C-n"
+    And I press "C-u 30 C-n"
     And I start an action chain
     And I press "C-! mf"
     And I type "dest.clj"
@@ -248,12 +262,13 @@ Feature: Move forms
       cljr.foo
       "doc..."
       (:use [cljr.core]
+            [cljr.page]
             [cljr.element]
             [cljr.form]
-            [cljr.page]
             [some.lib ns1 ns2 ns3])
-      (:require [cljr.dest :refer [this that select find-doc]]
-                [cljr.foobar :as foo])
+      (:require [cljr.foobar :as foo]
+                [clojure.string :refer [join split]]
+                [cljr.dest :refer [this that select find-doc]])
       (:refer-clojure :exclude [this that])
       (:import [java.util.Date]))
 
@@ -268,7 +283,9 @@ Feature: Move forms
     And I open file "tmp/src/cljr/dest.clj"
     Then I should see:
     """
-    (ns cljr.dest)
+    (ns cljr.dest
+      (:require [cljr.foobar :as foo]
+                [clojure.string :refer [join split]]))
 
     (defn frobinator [a b]
       (+ a b))
@@ -301,4 +318,43 @@ Feature: Move forms
                              (or (re-find (re-matcher re (:doc (meta v))))
                                  (re-find (re-matcher re (str (:name (meta v)))))))]
                    (print-doc v))))
+    """
+
+  Scenario: Move forms does not create circular dependencies, #341
+    When I insert:
+    """
+    (ns cljr.src
+      (:require [cljr.target :as t]
+                [clojure.set :as st]
+                [clojure.string :as str]))
+
+    (defn doit [x]
+      (str/join (st/union '("a" "b")))
+      (t/really-do-it x))
+    """
+    And the cursor is inside the first defn form
+    And I start an action chain
+    And I press "C-! mf"
+    And I type "target.clj"
+    And I press "RET"
+    And I execute the action chain
+    Then I should see:
+    """
+    (ns cljr.src
+      (:require [cljr.target :as t :refer [doit]]
+                [clojure.set :as st]
+                [clojure.string :as str]))
+    """
+    And I open file "tmp/src/cljr/target.clj"
+    Then I should see:
+    """
+    (ns cljr.target
+      (:require [clojure.set :as st]
+                [clojure.string :as str]))
+
+    (defn really-do-it [x] (println x))
+
+    (defn doit [x]
+      (str/join (st/union '("a" "b")))
+      (really-do-it x))
     """

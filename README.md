@@ -94,11 +94,8 @@ Make sure you create a profile in `~/.lein/profiles.clj`. It should
 contain the following:
 
 ```
-{:user {
- :plugins [[cider/cider-nrepl "0.9.1"]
-           [refactor-nrepl "1.1.0"]]
- :dependencies [[org.clojure/tools.nrepl "0.2.7"]]
- }}
+{:user {:plugins [[cider/cider-nrepl "0.12.0"]
+                  [refactor-nrepl    "2.2.0"]]}}
 ```
 
 Now you're ready to start a repl in a Clojure project with `lein repl`
@@ -107,9 +104,9 @@ host and the correct port) for full Emacs REPL/autocompletion joy.
 
 ### Screenshots
 
-<img src="https://github.com/downloads/overtone/live-coding-emacs/live-coding-config-in-use.png" alt="Screenshot 1" title="Live Coding Config Screenshot 1" />
+![Screenshot 1](screenshots/live-coding-config-in-use.png "Live Coding Config Screenshot 1")
 
-<img src="https://github.com/downloads/overtone/live-coding-emacs/live-coding-config-in-use-2.png" alt="Screenshot 2" title="Live Coding Config Screenshot 2" />
+![Screenshot 2](screenshots/live-coding-config-in-use-2.png "Live Coding Config Screenshot 2")
 
 ### Video
 
@@ -202,7 +199,7 @@ By default, Emacs live will load the packs in the following order:
 6. `org-pack`
 7. `clojure-pack`
 8. `bindings-pack`
- 
+
 However, you may create a `~/.emacs-live.el` file to override this
 behaviour. Simply set the var live-packs to a list of symbols
 representing the packs you'd like to load up (the order will be

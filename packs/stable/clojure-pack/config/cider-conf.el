@@ -1,5 +1,7 @@
-(live-add-pack-lib "spinner.el")
-(live-add-pack-lib "cider")
+;;(live-add-pack-lib "spinner.el")
+(package-install 'spinner)
+;;(live-add-pack-lib "cider")
+(package-install 'cider)
 (require 'cider)
 (require 'cider-apropos)
 (require 'cider-macroexpansion)
@@ -29,7 +31,8 @@
 (setq cider-overlays-use-font-lock t)
 
 ;;Auto Complete
-(live-add-pack-lib "ac-cider")
+;;(live-add-pack-lib "ac-cider")
+(package-install 'ac-cider)
 (require 'ac-cider )
 
 (add-hook 'cider-mode-hook 'ac-cider-setup)
@@ -50,8 +53,10 @@
 
 
 ;; Pull in the awesome clj-refactor lib by magnars
-(live-add-pack-lib "jump-el")
-(live-add-pack-lib "clj-refactor")
+;;(live-add-pack-lib "jump-el")
+(package-install 'jump)
+;;(live-add-pack-lib "clj-refactor")
+(package-install 'clj-refactor)
 (require 'clj-refactor)
 (add-hook 'clojure-mode-hook (lambda ()
                                (clj-refactor-mode 1)

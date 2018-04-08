@@ -1,12 +1,16 @@
 ;; Clojure Pack
-(live-add-pack-lib "rainbow-delimiters")
+;; (live-add-pack-lib "rainbow-delimiters")
+(package-install 'rainbow-delimiters)
+
 (require 'rainbow-delimiters)
 (require 'paredit)
 
-(live-add-pack-lib "uuid")
+;;(live-add-pack-lib "uuid")
+(package-install 'uuid)
 (require 'uuid)
 
-(live-add-pack-lib "edn")
+;;(live-add-pack-lib "edn")
+(package-install 'edn)
 (require 'edn)
 
 

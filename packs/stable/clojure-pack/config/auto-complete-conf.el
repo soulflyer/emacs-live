@@ -1,13 +1,15 @@
-(live-add-pack-lib "fuzzy-el")
-(live-add-pack-lib "popup-el")
-
+;;(live-add-pack-lib "fuzzy-el")
+(package-install 'fuzzy)
+;;(live-add-pack-lib "popup-el")
+(package-install 'popup)
 (require 'popup)
 (require 'fuzzy)
 
 ;;auto-complete mode
 
 
-(live-add-pack-lib "auto-complete")
+;;(live-add-pack-lib "auto-complete")
+(package-install 'auto-complete)
 (require 'auto-complete)
 (require 'auto-complete-config)
 (ac-config-default)

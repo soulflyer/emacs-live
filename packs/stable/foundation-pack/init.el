@@ -1,4 +1,5 @@
 (live-add-pack-lib "swiper")
+
 (require 'swiper)
 
 (live-add-pack-lib "with-editor")
@@ -41,7 +42,7 @@
 (live-load-config-file "window-number-conf.el")
 (live-load-config-file "recentf-conf.el")
 (live-load-config-file "elisp-slime-nav-conf.el")
-(live-load-config-file "popwin-conf.el")
+;;(live-load-config-file "popwin-conf.el")
 (live-load-config-file "shell-conf.el")
 (live-load-config-file "spelling-conf.el")
 (live-load-config-file "lisp-conf.el")

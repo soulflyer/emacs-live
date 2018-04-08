@@ -26,3 +26,6 @@ tmp/*
 swank/*
 ido.last
 smex-items
+elpa/*
+etc/custom/*
+bookmarks

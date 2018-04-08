@@ -4,8 +4,9 @@
     (make-directory dir t)
     dir))
 
-(live-add-pack-lib "gist")
-(live-add-pack-lib "gh")
-(live-add-pack-lib "pcache")
-(live-add-pack-lib "logito")
+;;(live-add-pack-lib "gist")
+(package-install 'gist)
+;; (live-add-pack-lib "gh")
+;; (live-add-pack-lib "pcache")
+;; (live-add-pack-lib "logito")
 (require 'gist)

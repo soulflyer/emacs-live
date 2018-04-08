@@ -1,4 +1,6 @@
-(live-add-pack-lib "clojure-mode")
+;;(live-add-pack-lib "clojure-mode")
+(package-install 'clojure-mode)
+(package-install 'clojure-mode-extra-font-locking)
 
 ;; tell clj-refactor not to eagerly eval namespaces
 ;; on connection (this totally conflicts with Overtone

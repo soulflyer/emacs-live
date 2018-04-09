@@ -1,12 +1,18 @@
 (live-add-pack-lib "swiper")
+(package-install 'swiper)
+(package-install 'ivy)
 
 (require 'swiper)
 
-(live-add-pack-lib "with-editor")
-
+(package-install 'with-editor)
+;;(live-add-pack-lib "with-editor")
+(package-install 'queue)
+;; seq is now part of emacs
+;; (package-install 'seq)
 (require 'queue)
 (require 'seq)
-(live-add-pack-lib "dash")
+;;(live-add-pack-lib "dash")
+(package-install 'dash)
 (require 'dash)
 
 (when (not (or (eq 'ms-dos system-type)
@@ -17,17 +23,21 @@
 (require 'smooth-scrolling)
 (require 'buffer-move)
 
-(live-add-pack-lib "find-file-in-project")
+;;(live-add-pack-lib "find-file-in-project")
+(package-install 'find-file-in-project)
 (require 'find-file-in-project)
-(live-add-pack-lib "s")
+;;(live-add-pack-lib "s")
+(package-install 's)
 (require 's)
-(live-add-pack-lib "epl")
+;;(live-add-pack-lib "epl")
+(package-install 'epl)
 (require 'epl)
-(live-add-pack-lib "pkg-info")
+;;(live-add-pack-lib "pkg-info")
+(package-install 'pkg-info)
 (require 'pkg-info)
 
-
-(live-add-pack-lib "hydra")
+;;(live-add-pack-lib "hydra")
+(package-install 'hydra)
 
 (live-load-config-file "backup-dir-conf.el")
 (live-load-config-file "util-fns.el")

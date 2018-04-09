@@ -1,4 +1,5 @@
-(live-add-pack-lib "yasnippet")
+;;(live-add-pack-lib "yasnippet")
+(package-install 'yasnippet)
 (require 'yasnippet)
 (setq live-yasnippet-dir (concat live-etc-dir "snippets"))
 (setq yas-snippet-dirs `(,live-yasnippet-dir))

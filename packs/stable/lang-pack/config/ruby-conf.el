@@ -1,4 +1,6 @@
-(live-add-pack-lib "ruby-mode")
+;;(live-add-pack-lib "ruby-mode")
+(package-install 'ruby-mode)
+(package-install 'inf-ruby)
 (require 'ruby-mode)
 (require 'inf-ruby)
 (require 'custom-ruby)

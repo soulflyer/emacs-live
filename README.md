@@ -37,6 +37,9 @@
 
 # Emacs Live
 
+This is a version of the excellent, but no-longer maintained, [emacs-live](http://github.com/overtone/emacs-live). It's modified to use emacs packages wherever possible so things are easier to keep up to date. The early versions are pretty close to the original in functionality but naturally will diverge as I include more and more of my own personal preferences. Feel free to use it, but I take no responsibility for any subsequent yak's that require shaving.
+
+
 An opinionated set of defaults for getting started with a specific focus
 on live coding with [Overtone](http://overtone.github.io) and
 [Quil](http://github.com/quil/quil). However, it's not just a one trick

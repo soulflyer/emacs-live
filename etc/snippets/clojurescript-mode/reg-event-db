@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: reg-event-db
+# key: redb
+# --
+(rf/reg-event-db
+  :${1:event-name}
+  (fn  [_ _]
+    ${2:code}))

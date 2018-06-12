@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: reg-sub
+# key: resb
+# --
+(rf/reg-sub
+  :${1:sub-name}
+  (fn [db _]
+    (:$1 db)))

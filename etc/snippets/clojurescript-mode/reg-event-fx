@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: reg-event-fx
+# key: refx
+# --
+(rf/reg-event-fx
+  :${1:event-name}
+  (fn [{:keys [db]} _]
+  (let [${3::a 1}]
+    {:dispatch [${2:TODO}]})))

@@ -30,3 +30,4 @@ elpa/*
 etc/custom/*
 bookmarks
 .tmux
+network-security.data

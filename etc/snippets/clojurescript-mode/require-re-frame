@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: require-re-frame
+# key: reqrf
+# --
+[re-frame.core :as rf]

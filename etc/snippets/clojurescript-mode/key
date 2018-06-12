@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: key
+# key: key
+# --
+[[:${1:function}]
+ [{:which ${2:number}}] ;; ${3:name}
+]

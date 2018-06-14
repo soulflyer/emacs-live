@@ -26,11 +26,11 @@
 (global-set-key (kbd "C-c f") 'winner-redo)
 
 ;; Git Gutter
-(global-set-key (kbd "C-c g g") 'git-gutter:toggle)
+(global-set-key (kbd "C-c g g") 'git-gutter-mode)
 
 ;; Jump to next/previous diff
-(global-set-key (kbd "C-c g p") 'git-gutter:previous-diff)
-(global-set-key (kbd "C-c g n") 'git-gutter:next-diff)
+(global-set-key (kbd "C-c g p") 'git-gutter:previous-hunk)
+(global-set-key (kbd "C-c g n") 'git-gutter:next-hunk)
 (global-set-key (kbd "C-c g d") 'git-gutter:popup-diff)
 (global-set-key (kbd "C-c g r") 'git-gutter:revert-hunk)
 
@@ -71,12 +71,8 @@
 ;;diff shortcuts
 (global-set-key (kbd "C-c d f") 'diff-buffer-with-file)
 
-;; Got rid of popwin and shell so these are redundant
-;; (global-set-key (kbd "C-c s t") 'live-show-ansi-terminal)
-;; (global-set-key (kbd "C-c s n") 'live-new-ansi-terminal)
-;; (global-set-key (kbd "C-c s m") 'live-show-messages)
-
 ;;window and buffer movement
+;; No use at all with tmux and emacs single window setup, but keep for switch to gui emacs.
 (global-set-key (kbd "C-c w s") 'swap-windows)
 (global-set-key (kbd "C-c w r") 'rotate-windows)
 (global-set-key (kbd "C-c w p") 'buf-move-up)
@@ -93,6 +89,7 @@
 (define-key clojure-mode-map (kbd "C-c l l") 'align-cljlet)
 (define-key clojure-mode-map (kbd "C-M-z")   'align-cljlet)
 
+;;TODO sort out this mess
 (define-key paredit-mode-map (kbd "C-c l k") 'paredit-splice-sexp-killing-forward)
 (define-key paredit-mode-map (kbd "C-c l w") 'paredit-splice-sexp-killing-backward)
 (define-key paredit-mode-map (kbd "C-c l l") 'align-cljlet)
@@ -130,10 +127,8 @@
 (define-key org-mode-map (kbd "C-M-_")    'live-decrement-number-at-point)
 
 ;;increment and decrement number at point
-(global-set-key (kbd "C-M-_")  'live-decrement-number-at-point)
 (global-set-key (kbd "M-=")    'live-increment-number-at-point)
-(global-set-key (kbd "C-M-=")    'live-increment-number-at-point)
-
+(global-set-key (kbd "M--")    'live-decrement-number-at-point)
 
 ;;browse kill ring (visual paste)
 (global-set-key (kbd "M-y") 'browse-kill-ring)
@@ -146,19 +141,8 @@
 (global-set-key (kbd "C-M-_") 'undo-tree-undo)
 (global-set-key (kbd "C-_")   'undo-tree-undo)
 
-;;mark current function
-(global-set-key (kbd "C-x C-p") 'mark-defun)
-
 ;;use delete-horizontal-space to completely nuke all whitespace
 (global-set-key (kbd "M-SPC ") 'live-delete-whitespace-except-one)
-
-;;make ^h delete rather than help
-(global-set-key (kbd "C-h") 'delete-backward-char)
-(define-key paredit-mode-map (kbd "C-h") 'paredit-backward-delete)
-
-;;redefine help shortcut
-(global-set-key (kbd "M-h") 'help-command)
-(define-key org-mode-map (kbd "M-h") 'help-command)
 
 ;;allow the deletion of words:
 ;;backward kill word (forward kill word is M-d)
@@ -177,12 +161,6 @@
 
 ;;repeat previous command
 (global-set-key (kbd "M-'") 'repeat)
-
-;;scroll other window
-(global-set-key (kbd "C-M-]") 'scroll-other-window)
-(global-set-key (kbd "C-M-[") 'scroll-other-window-down)
-
-
 
 ;;fast vertical naviation
 (global-set-key  (kbd "M-U") (lambda () (interactive) (forward-line -10)))
@@ -208,11 +186,8 @@
 (global-set-key (kbd "C-x C-i") 'idomenu)
 
 ;; File
-(global-set-key (kbd "C-x M-f")   'ido-find-file-other-window)
-(global-set-key (kbd "C-x C-M-f") 'find-file-in-project)
 (global-set-key (kbd "C-x f")     'live-recentf-ido-find-file)
 (global-set-key (kbd "C-x C-r")   'ido-recentf-open)
-(global-set-key (kbd "M-`")       'file-cache-minibuffer-complete)
 (global-set-key (kbd "C-x C-b")   'ibuffer)
 
 ;; Window switching.
@@ -225,16 +200,11 @@
 ;; Magit
 (global-set-key (kbd "C-x g") 'magit-status)
 
-;; Activate occur easily inside isearch
-(define-key isearch-mode-map (kbd "C-o")
-  (lambda () (interactive)
-    (let ((case-fold-search isearch-case-fold-search))
-      (occur (if isearch-regexp isearch-string (regexp-quote isearch-string))))))
-
 ;; Ace jump mode
 (global-set-key (kbd "C-o") 'ace-jump-mode)
 
 ;; Show documentation/information with M-RET
+;; I like this but it's currently overshadowed by open-next-line. Revisit later TODO
 (define-key lisp-mode-shared-map (kbd "M-RET") 'live-lisp-describe-thing-at-point)
 (define-key cider-repl-mode-map (kbd "M-RET") 'cider-doc)
 (define-key cider-mode-map (kbd "M-RET") 'cider-doc)

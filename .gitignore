@@ -31,3 +31,4 @@ etc/custom/*
 bookmarks
 .tmux
 network-security.data
+etc/multiple-cursors-prefs.el

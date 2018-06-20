@@ -98,6 +98,10 @@
 (define-key clojure-mode-map (kbd "C-c c '") 'clojure-convert-collection-to-quoted-list)
 (define-key clojure-mode-map (kbd "C-c c (") 'clojure-convert-collection-to-list)
 (define-key clojure-mode-map (kbd "C-c c #") 'clojure-convert-collection-to-set)
+(define-key clojure-mode-map (kbd "C-c s n") 'clojure-sort-ns)
+(define-key clojure-mode-map (kbd "C-c l i") 'clojure-introduce-let)
+(define-key clojure-mode-map (kbd "C-c l m") 'clojure-move-to-let)
+
 
 ;;TODO sort out this mess
 (define-key paredit-mode-map (kbd "C-c l k") 'paredit-splice-sexp-killing-forward)

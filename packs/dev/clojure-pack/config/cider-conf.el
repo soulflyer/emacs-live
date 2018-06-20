@@ -56,8 +56,3 @@
 (add-hook 'clojure-mode-hook (lambda ()
                                (clj-refactor-mode 1)
                                (cljr-add-keybindings-with-prefix "C-c C-m")))
-
-(define-key clojure-mode-map (kbd "C-c c m") 'clojure-convert-collection-to-map)
-(define-key clojure-mode-map (kbd "C-c c v") 'clojure-convert-collection-to-vector)
-(define-key clojure-mode-map (kbd "C-c c l") 'clojure-convert-collection-to-quoted-list)
-(define-key clojure-mode-map (kbd "C-c c s") 'clojure-convert-collection-to-set)

@@ -89,6 +89,15 @@
 
 (define-key clojure-mode-map (kbd "C-c l l") 'align-cljlet)
 (define-key clojure-mode-map (kbd "C-M-z")   'align-cljlet)
+(define-key clojure-mode-map (kbd "C-c c m") 'clojure-convert-collection-to-map)
+(define-key clojure-mode-map (kbd "C-c c v") 'clojure-convert-collection-to-vector)
+(define-key clojure-mode-map (kbd "C-c c l") 'clojure-convert-collection-to-list)
+(define-key clojure-mode-map (kbd "C-c c s") 'clojure-convert-collection-to-set)
+(define-key clojure-mode-map (kbd "C-c c {") 'clojure-convert-collection-to-map)
+(define-key clojure-mode-map (kbd "C-c c [") 'clojure-convert-collection-to-vector)
+(define-key clojure-mode-map (kbd "C-c c '") 'clojure-convert-collection-to-quoted-list)
+(define-key clojure-mode-map (kbd "C-c c (") 'clojure-convert-collection-to-list)
+(define-key clojure-mode-map (kbd "C-c c #") 'clojure-convert-collection-to-set)
 
 ;;TODO sort out this mess
 (define-key paredit-mode-map (kbd "C-c l k") 'paredit-splice-sexp-killing-forward)

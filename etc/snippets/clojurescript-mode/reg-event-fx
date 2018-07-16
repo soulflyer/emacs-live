@@ -4,6 +4,5 @@
 # --
 (rf/reg-event-fx
   :${1:event-name}
-  (fn [{:keys [db]} _]
-  (let [${3::a 1}]
-    {:dispatch [${2:TODO}]})))
+  (fn [{:keys [db]} ${4:_}]
+    {:${2:db} ${3:TODO}}))

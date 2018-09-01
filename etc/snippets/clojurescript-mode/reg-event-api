@@ -1,0 +1,18 @@
+# key: reapi
+# name: reg-event-api
+# --
+(rf/reg-event-fx
+  :${1:event-name}
+  (fn [{:keys [db]} [_ response]]
+    (let [api-root (rf/subscribe [:api-root])]
+      {:http-xhrio
+       {:method          :get
+        :cross-origin    true
+        :uri             (str @api-root ${2:api-path})
+        :format          (ajax/json-request-format)
+        :response-format (ajax/json-response-format {:keywords? true})
+        :on-success      [:simple-response]
+        :on-failure      [:load-fail "$1"]}
+       :db ( -> db
+            (assoc :loading? true)
+            (assoc :error (str ${3:message})))})))

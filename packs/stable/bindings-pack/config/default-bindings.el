@@ -152,8 +152,8 @@
 (global-set-key (kbd "M-]") 'kill-ring-save)
 
 ;; undo
-(global-set-key (kbd "C-M-_") 'undo-tree-undo)
-(global-set-key (kbd "C-_")   'undo-tree-undo)
+(global-set-key (kbd "C-M-_") 'undo-tree-visualize)
+(global-set-key (kbd "C-_")   'undo-tree-visualize)
 
 ;;use delete-horizontal-space to completely nuke all whitespace
 (global-set-key (kbd "M-SPC ") 'live-delete-whitespace-except-one)

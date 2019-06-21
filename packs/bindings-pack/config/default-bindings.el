@@ -5,7 +5,17 @@
 (global-set-key (kbd "C-x C-a") 'move-beginning-of-line)
 (global-set-key (kbd "C-s")     'swiper)
 (global-set-key (kbd "M-x")     'counsel-M-x)
-
+(global-set-key (kbd "M-m")     'iy-go-to-char)
+(global-set-key (kbd "M-M")     'iy-go-to-char-backward)
+(global-set-key (kbd "C-@")     'er/expand-region)
+(global-set-key (kbd "M-2")     'er/contract-region)
+(global-set-key (kbd "C-h")     'help)
+(global-set-key (kbd "C-z")     'cua-scroll-down)
+(global-set-key (kbd "M-~")     'switch-to-next-buffer)
+(global-set-key (kbd "M-`")     'switch-to-prev-buffer)
+(global-set-key (kbd "M-p")     'outline-previous-visible-heading)
+(global-set-key (kbd "M-n")     'outline-next-visible-heading)
+(global-set-key (kbd "M-'")     'repeat)
 (global-set-key [f6]            'rgrep)
 (global-set-key [f5]            'rgrep-context)
 (define-key grep-mode-map (kbd "r") 'rename-buffer)
@@ -13,6 +23,7 @@
 (global-set-key (kbd "C-o")     'avy-goto-char-timer)
 (global-set-key (kbd "C-M-q")   'quoted-insert)
 (global-set-key (kbd "C-M-\\")  'aggressive-indent-mode)
+(global-set-key (kbd "C-\\")    'align-regexp)
 (global-set-key (kbd "M-k")     'live-backwards-kill-line)
 (global-set-key (kbd "M-y")     'browse-kill-ring)
 (global-set-key (kbd "M-/")     'comment-or-uncomment-region)
@@ -45,27 +56,50 @@
 ;;
 ;;e - eval and replace
 ;;b - winner undo
+;;d - diff shortcuts
 ;;f - winner redo
 ;;g - git gutter
-;;l - lispy shortcuts (i.e. paredit and clojure specific fns)
-;;m - emacs eval shortcuts
-;;t - text shortcuts
 ;;i - utf8 char shortcuts
-;;j - quick-jump shortcuts
-;;d - diff shortcuts
-;;p - project shortcuts
-;;s - show popupwindows
+;;j - jump shortcuts
+;;l - org-link stuff
+;;m - multiple-cusor
+;;p - paredit shortcuts
+;;t - text shortcuts
 ;;w - window and buffer shortcuts
+
+
+;;s - show popupwindows
+
 
 (global-set-key (kbd "C-c b")   'winner-undo)
 (global-set-key (kbd "C-c f")   'winner-redo)
 
 (global-set-key (kbd "C-c h")   'helm-descbinds)
 (global-set-key (kbd "C-c C-r") 'ivy-resume)
+(global-set-key (kbd "C-c b")   'switch-to-next-buffer)
+(global-set-key (kbd "C-c C-b") 'switch-to-prev-buffer)
+(global-set-key (kbd "C-c o")   'org-agenda)
+
+(global-set-key (kbd "C-c C-j") 'cider-jack-in)
+(global-set-key (kbd "C-c M-j") 'cider-jack-in-clojurescript)
+(global-set-key (kbd "C-c M-c") 'cider-connect)
+
+;; Release this so it can be used by yasnippet
+
+(global-set-key (kbd "C-c C-s") 'yas-insert-snippet)
+(global-set-key (kbd "C-c C-n") 'yas-new-snippet)
+
+(global-set-key (kbd "C-c v")   'visual-line-mode)
+(global-set-key (kbd "C-c C-t") 'toggle-truncate-lines)
 
 (global-set-key (kbd "C-c C-c t") 'live-show-ansi-terminal)
+
+;;diff shortcuts
+(global-set-key (kbd "C-c d f") 'diff-buffer-with-file)
+
 ;; Git Gutter
 (global-set-key (kbd "C-c g g") 'git-gutter-mode)
+(global-set-key (kbd "C-c g s") 'magit-status)
 
 ;; Jump to next/previous diff
 (global-set-key (kbd "C-c g p") 'git-gutter:previous-hunk)
@@ -108,6 +142,11 @@
 (global-set-key (kbd "C-c j u") 'dumb-jump-back)
 (global-set-key (kbd "C-c j g") 'dumb-jump-go-prompt)
 
+;; Org link stuff
+(global-set-key (kbd "C-c l s") 'org-store-link)
+(global-set-key (kbd "C-c l i") 'org-insert-link)
+(global-set-key (kbd "C-c l o") (lambda () (interactive) (org-open-at-point t)))
+
 ;; Multiple Cursors
 (global-set-key (kbd "C-c m n") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-c m p") 'mc/mark-previous-like-this)
@@ -116,8 +155,6 @@
 (global-set-key (kbd "C-c m d") 'mc/mark-all-dwim)
 (global-set-key (kbd "C-c m a") 'mc/mark-all-like-this)
 
-;;diff shortcuts
-(global-set-key (kbd "C-c d f") 'diff-buffer-with-file)
 
 ;;window and buffer movement
 ;; No use at all with tmux and emacs single window setup, but keep for switch to gui emacs.
@@ -162,13 +199,8 @@
 (define-key paredit-mode-map (kbd "M-q")     'live-paredit-reindent-defun)
 (define-key paredit-mode-map (kbd "C-M-d")   'paredit-forward-kill-word)
 (define-key paredit-mode-map (kbd "M-k")     'live-paredit-backward-kill)
-(define-key paredit-mode-map (kbd "M-\\")    'live-paredit-delete-horizontal-space)
 (define-key paredit-mode-map (kbd "M-T")     'transpose-sexps)
 (define-key paredit-mode-map (kbd "C-M-k")   'live-paredit-copy-sexp-at-point)
-
-;;(define-key paredit-mode-map (kbd "C-M-f")     'paredit-forward)
-(define-key paredit-mode-map (kbd "C-<up>")    'paredit-backward-up)
-(define-key paredit-mode-map (kbd "C-<down>")  'paredit-forward-down)
 (define-key paredit-mode-map (kbd "C-<left>")  'paredit-backward)
 (define-key paredit-mode-map (kbd "C-<right>") 'paredit-forward)
 (define-key paredit-mode-map (kbd "C-c p b f") 'paredit-forward-barf-sexp)
@@ -187,58 +219,29 @@
 (define-key org-mode-map (kbd "C-M-i")    'org-shiftup)
 (define-key org-mode-map (kbd "C-M-k")    'org-shiftdown)
 (define-key org-mode-map (kbd "C-M-_")    'live-decrement-number-at-point)
+(define-key org-mode-map (kbd "C-c C-s")  'yas-insert-snippet)
+(define-key org-mode-map (kbd "C-c C-n")  'yas-new-snippet)
 
 
-;;use delete-horizontal-space to completely nuke all whitespace
+(global-set-key  (kbd "C-x k")   'kill-this-buffer)
+(global-set-key  (kbd "C-x !")   'live-server-kill-terminal)
+(global-set-key  (kbd "C-x C-b") 'ibuffer)
+(global-set-key  (kbd "C-x C-m") 'execute-extended-command)
+(global-set-key  (kbd "C-x o")   'win-switch-dispatch)
+(global-set-key  (kbd "C-x C-d") 'ido-dired)
+(global-set-key  (kbd "C-x d")   'ido-dired)
+(global-set-key  (kbd "C-x C-b") 'ibuffer)
+(global-set-key  (kbd "C-x b")   'ido-switch-buffer)
+(global-set-key  (kbd "C-x C-r") 'recentf-open-files)
+(global-set-key  (kbd "C-x SPC") 'cua-set-mark)
+(global-set-key  (kbd "C-x w")   'delete-window)
 
-
-;;allow the deletion of words:
-;;backward kill word (forward kill word is M-d)
-
-(define-key ido-file-completion-map (kbd "C-\\") 'backward-kill-word)
-(define-key paredit-mode-map (kbd "C-\\") 'paredit-backward-kill-word)
-
-
-;;repeat previous command
-(global-set-key (kbd "M-'") 'repeat)
-
-;;fast vertical naviation
-
-(global-set-key  (kbd "M-p") 'outline-previous-visible-heading)
-(global-set-key  (kbd "M-n") 'outline-next-visible-heading)
-
-;;REQUIRES CUA-mode for rectangle selection
-(global-set-key (kbd "§") 'cua-set-rectangle-mark)
-
-;; Align your code in a pretty way.
-(global-set-key (kbd "C-x \\") 'align-regexp)
-
-
-;; Jump to a definition in the current file.
-(global-set-key (kbd "C-x C-i") 'idomenu)
-
-(global-set-key (kbd "C-x C-r")   'ido-recentf-open)
-(global-set-key (kbd "C-x C-b")   'ibuffer)
-
-;; If you want to be able to M-x without meta
-(global-set-key (kbd "C-x C-m") 'execute-extended-command)
-
-;; Magit
-(global-set-key (kbd "C-x g") 'magit-status)
-
-;; Show documentation/information with M-RET
-(define-key lisp-mode-shared-map (kbd "M-RET") 'live-lisp-describe-thing-at-point)
-
-(define-key cider-repl-mode-map (kbd "<up>")    'cider-repl-backward-input)
-(define-key cider-repl-mode-map (kbd "<down>")  'cider-repl-next-input)
-(define-key cider-repl-mode-map (kbd "C-c C-c") 'cider-repl-kill-input)
-(define-key cider-repl-mode-map (kbd "C-c h")   'cider-browse-ns-all)
-(define-key cider-repl-mode-map (kbd "C-c x")   'cider-refresh)
-(define-key cider-repl-mode-map (kbd "C-c q")   'cider-quit)
-(define-key cider-repl-mode-map (kbd "M-RET")   'cider-doc)
-
-(define-key cider-mode-map (kbd "M-RET") 'cider-doc)
-
-(global-set-key (kbd "C-x o") 'win-switch-dispatch)
-
-(global-set-key (kbd "C-x !") 'live-server-kill-terminal)
+(define-key cider-repl-mode-map   (kbd "<up>")    'cider-repl-backward-input)
+(define-key cider-repl-mode-map   (kbd "<down>")  'cider-repl-next-input)
+(define-key cider-repl-mode-map   (kbd "C-c C-c") 'cider-repl-kill-input)
+(define-key cider-repl-mode-map   (kbd "C-c h")   'cider-browse-ns-all)
+(define-key cider-repl-mode-map   (kbd "C-c x")   'cider-refresh)
+(define-key cider-repl-mode-map   (kbd "C-c q")   'cider-quit)
+(define-key cider-repl-mode-map   (kbd "M-RET")   'cider-doc)
+(define-key cider-mode-map        (kbd "M-RET")   'cider-doc)
+(define-key lisp-mode-shared-map  (kbd "M-RET")   'live-lisp-describe-thing-at-point)

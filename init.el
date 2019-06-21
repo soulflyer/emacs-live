@@ -234,13 +234,13 @@
 ;;     MM        .M dP  dP  dP `88888P8 '88888P' '88888P'
 ;;     MMMMMMMMMMMM
 ;;
-;;        M\"\"M
-;;        M  M
-;;        M  M .d8888b.
-;;        M  M Y8ooooo.
-;;        M  M       88
-;;        M  M `88888P'
-;;        MMMM
+;;        M\"\"MMP\"\"\"\"\"\"`MM
+;;        M  M M  mmmmm..M
+;;        M  M M.      `YM
+;;        M  M MMMMMMM.  M
+;;        M  M M. .MMM'  M
+;;        M  M Mb.     .dM
+;;        MMMM MMMMMMMMMMM
 ;;
 ;;           M\"\"MMMMMMMM M\"\"M M\"\"MMMMM\"\"M MM\"\"\"\"\"\"\"\"`M
 ;;           M  MMMMMMMM M  M M  MMMMM  M MM  mmmmmmmM

@@ -1,5 +1,5 @@
 
-<img src="http://github.com/downloads/overtone/emacs-live/emacs-live.png" />
+<img src="/emacs-live.png" />
 
 <!--
            MM""""""""`M

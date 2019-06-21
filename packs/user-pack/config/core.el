@@ -93,12 +93,6 @@
 ;; This will cause "Zoning.." problem if flycheck is not installed (package-install)
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
-;; Cleanup dired display
-(require 'ls-lisp)
-(setq ls-lisp-use-insert-directory-program nil)
-(setq ls-lisp-verbosity '(uid))
-(setq dired-dwim-target t)
-
 (setq default-tab-width 2)
 
 ;; Cleanup ibuffer display so I can tell which file is which

@@ -1,15 +1,5 @@
 ;; org mode config
 
-;;(live-add-pack-lib "org-mode/lisp")
-;;(live-add-pack-lib "org-mode/contrib/lisp")
-
-;; this is already there in emacs, no need to pull in another version
-;; (package-install 'org-plus-contrib)
-
-;; set ODT data directory to emacs-live's org-mode
-(setq org-odt-data-dir (expand-file-name "./org-mode/etc" (live-pack-lib-dir)))
-
-;; Fix conflicts (http://orgmode.org/org.html#Conflicts)
 
 ;; windmove compatibility
 (add-hook 'org-shiftup-final-hook 'windmove-up)

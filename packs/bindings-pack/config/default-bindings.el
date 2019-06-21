@@ -222,6 +222,11 @@
 (define-key org-mode-map (kbd "C-c C-s")  'yas-insert-snippet)
 (define-key org-mode-map (kbd "C-c C-n")  'yas-new-snippet)
 
+(define-key dired-mode-map (kbd "f")       'dired-make-file)
+(define-key dired-mode-map (kbd "C-c C-e") 'wdired-change-to-wdired-mode)
+(define-key dired-mode-map (kbd "/")       'dired-up-directory)
+(define-key dired-mode-map [mouse-2]       'dired-find-file)
+
 
 (global-set-key  (kbd "C-x k")   'kill-this-buffer)
 (global-set-key  (kbd "C-x !")   'live-server-kill-terminal)

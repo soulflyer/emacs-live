@@ -84,11 +84,10 @@
 (global-set-key (kbd "C-c M-j") 'cider-jack-in-clojurescript)
 (global-set-key (kbd "C-c M-c") 'cider-connect)
 
-;; Release this so it can be used by yasnippet
-
 (global-set-key (kbd "C-c C-s") 'yas-insert-snippet)
 (global-set-key (kbd "C-c C-n") 'yas-new-snippet)
 
+(global-set-key (kbd "C-c u")   'underline-with-char)
 (global-set-key (kbd "C-c v")   'visual-line-mode)
 (global-set-key (kbd "C-c C-t") 'toggle-truncate-lines)
 
@@ -100,8 +99,6 @@
 ;; Git Gutter
 (global-set-key (kbd "C-c g g") 'git-gutter-mode)
 (global-set-key (kbd "C-c g s") 'magit-status)
-
-;; Jump to next/previous diff
 (global-set-key (kbd "C-c g p") 'git-gutter:previous-hunk)
 (global-set-key (kbd "C-c g n") 'git-gutter:next-hunk)
 (global-set-key (kbd "C-c g d") 'git-gutter:popup-diff)
@@ -110,6 +107,7 @@
 ;;text manipulation shortcuts
 (global-set-key (kbd "C-c t b") 'untabify-buffer)
 (global-set-key (kbd "C-c t r") 'untabify)
+(global-set-key (kbd "C-c t u") 'underline-with-char)
 
 ;;emacs-lisp shortcuts
 (global-set-key (kbd "C-c m b") 'eval-buffer)

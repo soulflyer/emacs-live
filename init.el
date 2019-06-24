@@ -224,9 +224,8 @@
 (when (file-exists-p custom-file)
   (load custom-file))
 
-;; (message "\n\n Pack loading completed. Your Emacs is Live...\n\n")
-(message "\n\n Pack loading completed.\n\n
-;;     MM\"\"\"\"\"\"\"\"`M
+(setq live-ascii-art-running
+      ";;     MM\"\"\"\"\"\"\"\"`M
 ;;     MM  mmmmmmmM
 ;;     M`      MMMM 88d8b.d8b. .d8888b. .d8888b. .d8888b.
 ;;     MM  MMMMMMMM 88''88'`88 88'  `88 88'  `\"\" Y8ooooo.
@@ -248,6 +247,7 @@
 ;;           M  MMMMMMMM M  M M  MMMM' .M MM  MMMMMMMM
 ;;           M  MMMMMMMM M  M M  MMP' .MM MM  MMMMMMMM
 ;;           M         M M  M M     .dMMM MM        .M
-;;           MMMMMMMMMMM MMMM MMMMMMMMMMM MMMMMMMMMMMM
-\n\n")
+;;           MMMMMMMMMMM MMMM MMMMMMMMMMM MMMMMMMMMMMM")
+
+(message (concat "\n\n Pack loading completed. Your Emacs is Live...\n\n" live-ascii-art-running "\n\n"))
 (put 'downcase-region 'disabled nil)

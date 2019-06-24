@@ -1,6 +1,6 @@
-## TextPack
+## Window Pack
 
-Various tools for manipulating text.
+Control window behaviour.
 
 ### init.el
 

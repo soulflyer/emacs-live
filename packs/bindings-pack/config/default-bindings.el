@@ -54,8 +54,6 @@
 
 ;; C-c Groups
 ;;
-;;e - eval and replace
-;;b - winner undo
 ;;d - diff shortcuts
 ;;f - winner redo
 ;;g - git gutter
@@ -71,13 +69,8 @@
 ;;s - show popupwindows
 
 
-(global-set-key (kbd "C-c b")   'winner-undo)
-(global-set-key (kbd "C-c f")   'winner-redo)
-
 (global-set-key (kbd "C-c h")   'helm-descbinds)
 (global-set-key (kbd "C-c C-r") 'ivy-resume)
-(global-set-key (kbd "C-c b")   'switch-to-next-buffer)
-(global-set-key (kbd "C-c C-b") 'switch-to-prev-buffer)
 (global-set-key (kbd "C-c o")   'org-agenda)
 
 (global-set-key (kbd "C-c C-j") 'cider-jack-in)
@@ -93,6 +86,13 @@
 
 (global-set-key (kbd "C-c C-c t") 'live-show-ansi-terminal)
 
+;;bookmark commands
+(global-set-key (kbd "C-c b m")   'bm-toggle)
+(global-set-key (kbd "C-c b n")   'bm-next)
+(global-set-key (kbd "C-c b p")   'bm-previous)
+(global-set-key (kbd "C-c b s")   'bm-show-all)
+(global-set-key (kbd "C-c b d")   'bm-remove-all-current-buffer)
+(global-set-key (kbd "C-c b C-d") 'bm-remove-all-all-buffers)
 ;;diff shortcuts
 (global-set-key (kbd "C-c d f") 'diff-buffer-with-file)
 
@@ -105,7 +105,8 @@
 (global-set-key (kbd "C-c g r") 'git-gutter:revert-hunk)
 
 ;;text manipulation shortcuts
-(global-set-key (kbd "C-c t b") 'untabify-buffer)
+(global-set-key (kbd "C-c t b") 'banner-comment)
+(global-set-key (kbd "C-c t c") 'comment-box)
 (global-set-key (kbd "C-c t r") 'untabify)
 (global-set-key (kbd "C-c t u") 'underline-with-char)
 
@@ -228,7 +229,6 @@
 
 (global-set-key  (kbd "C-x k")   'kill-this-buffer)
 (global-set-key  (kbd "C-x !")   'live-server-kill-terminal)
-(global-set-key  (kbd "C-x C-b") 'ibuffer)
 (global-set-key  (kbd "C-x C-m") 'execute-extended-command)
 (global-set-key  (kbd "C-x o")   'win-switch-dispatch)
 (global-set-key  (kbd "C-x C-d") 'ido-dired)

@@ -3,7 +3,7 @@
 (setq display-buffer-function 'popwin:display-buffer)
 
 (setq popwin:special-display-config
-      '(("*Help*"  :height 20)
+      '(("*Help*"  :height 30)
         ("*Completions*" :noselect t)
         ("*Messages*" :noselect t :height 30)
         ("*Apropos*" :noselect t :height 30)

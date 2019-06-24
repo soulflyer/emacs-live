@@ -6,7 +6,6 @@
 (live-load-config-file "package.el")
 (live-load-config-file "core.el")
 (live-load-config-file "functions.el")
-(live-load-config-file "same-window.el")
 (live-load-config-file "mail.el")
 (live-load-config-file "grep.el")
 (live-load-config-file "rocks.el")

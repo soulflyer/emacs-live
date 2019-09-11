@@ -43,10 +43,10 @@
 (browse-kill-ring-default-keybindings)
 
 ;;(require 'inf-ruby)
-(autoload 'inf-ruby "inf-ruby" "Run an inferior Ruby process" t)
-(autoload 'inf-ruby-setup-keybindings "inf-ruby" "" t)
-(eval-after-load 'ruby-mode
-  '(add-hook 'ruby-mode-hook 'inf-ruby-setup-keybindings))
+;; (autoload 'inf-ruby "inf-ruby" "Run an inferior Ruby process" t)
+;; (autoload 'inf-ruby-setup-keybindings "inf-ruby" "" t)
+;; (eval-after-load 'ruby-mode
+;;   '(add-hook 'ruby-mode-hook 'inf-ruby-setup-keybindings))
 
 (require 'zencoding-mode)
 (add-hook 'sgml-mode-hook 'zencoding-mode)
@@ -90,6 +90,7 @@
 (autoload 'apples-open-scratch "apples-mode" "Open scratch buffer for AppleScript." t)
 (add-to-list 'auto-mode-alist '("\\.\\(applescri\\|sc\\)pt\\'" . apples-mode))
 
+;;(eval-after-load 'flycheck '(flycheck-clojure-setup))
 ;; This will cause "Zoning.." problem if flycheck is not installed (package-install)
 (add-hook 'after-init-hook #'global-flycheck-mode)
 

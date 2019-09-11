@@ -169,6 +169,7 @@
 (global-set-key (kbd "C-c w '") (lambda () (interactive) (enlarge-window 1)))
 
 ;; clojure
+(define-key clojure-mode-map (kbd "C-c M-j") 'cider-jack-in-cljs)
 (define-key clojure-mode-map (kbd "C-c c m") 'clojure-convert-collection-to-map)
 (define-key clojure-mode-map (kbd "C-c c v") 'clojure-convert-collection-to-vector)
 (define-key clojure-mode-map (kbd "C-c c l") 'clojure-convert-collection-to-list)
@@ -202,6 +203,7 @@
 (define-key paredit-mode-map (kbd "C-M-k")   'live-paredit-copy-sexp-at-point)
 (define-key paredit-mode-map (kbd "C-<left>")  'paredit-backward)
 (define-key paredit-mode-map (kbd "C-<right>") 'paredit-forward)
+(define-key paredit-mode-map (kbd "M-)")       'paredit-forward-slurp-sexp)
 (define-key paredit-mode-map (kbd "C-c p b f") 'paredit-forward-barf-sexp)
 (define-key paredit-mode-map (kbd "C-c p f b") 'paredit-forward-barf-sexp)
 (define-key paredit-mode-map (kbd "C-c p b b") 'paredit-backward-barf-sexp)
@@ -224,6 +226,7 @@
 (define-key dired-mode-map (kbd "f")       'dired-make-file)
 (define-key dired-mode-map (kbd "C-c C-e") 'wdired-change-to-wdired-mode)
 (define-key dired-mode-map (kbd "/")       'dired-up-directory)
+(define-key dired-mode-map (kbd "\\")       'dired-up-directory)
 (define-key dired-mode-map [mouse-2]       'dired-find-file)
 
 

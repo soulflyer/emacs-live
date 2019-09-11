@@ -50,7 +50,7 @@
 
 (defun live-delete-whitespace-except-one ()
   (interactive)
-  (just-one-space -1))
+  (cycle-spacing -1))
 
 
 (defun live-backwards-kill-line ()

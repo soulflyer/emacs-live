@@ -32,6 +32,7 @@
 (setq cider-repl-history-file "~/.cider-history")
 (setq cider-prompt-for-symbol nil)
 (setq cider-show-error-buffer nil)
+(setq cider-test-show-report-on-success t)
 
 ;; This should probably be set per project in .dir-locals.el
 (setq cider-default-cljs-repl 'figwheel )

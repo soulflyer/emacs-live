@@ -169,7 +169,7 @@
 (global-set-key (kbd "C-c w '") (lambda () (interactive) (enlarge-window 1)))
 
 ;; clojure
-(define-key clojure-mode-map (kbd "C-c M-j") 'cider-jack-in-cljs)
+(define-key clojure-mode-map (kbd "C-c M-j") 'cider-jack-in-clojurescript)
 (define-key clojure-mode-map (kbd "C-c c m") 'clojure-convert-collection-to-map)
 (define-key clojure-mode-map (kbd "C-c c v") 'clojure-convert-collection-to-vector)
 (define-key clojure-mode-map (kbd "C-c c l") 'clojure-convert-collection-to-list)
@@ -240,7 +240,10 @@
 (global-set-key  (kbd "C-x b")   'ido-switch-buffer)
 (global-set-key  (kbd "C-x C-r") 'recentf-open-files)
 (global-set-key  (kbd "C-x SPC") 'cua-set-mark)
+(global-set-key  (kbd "C-x t")   'treemacs)
 (global-set-key  (kbd "C-x w")   'delete-window)
+
+(define-key projectile-mode-map   (kbd "C-x p")   'projectile-command-map)
 
 (define-key cider-repl-mode-map   (kbd "<up>")    'cider-repl-backward-input)
 (define-key cider-repl-mode-map   (kbd "<down>")  'cider-repl-next-input)

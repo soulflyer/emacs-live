@@ -15,7 +15,9 @@
 (setq inf-mongo-command "/opt/local/bin/mongo 127.0.0.1:27017/soulflyer")
 
 (package-install 'paradox)
+(package-install 'projectile)
 (package-install 'markdown-mode)
+(package-install 'treemacs)
 
 ;; deal with big files
 (package-install 'vlf)

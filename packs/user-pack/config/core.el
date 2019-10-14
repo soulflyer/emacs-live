@@ -1,4 +1,4 @@
-;;; package --- summary:
+;; package --- summary:
 ;;; Commentary:
 ;;; Code:
 (setq-default flycheck-emacs-lisp-load-path 'inherit)
@@ -27,6 +27,7 @@
 (setq ivy-use-virtual-buffers t)
 (setq ivy-use-selectable-prompt t)
 
+(projectile-mode +1)
 (which-key-mode)
 ;; shut up about my elisp code you pedant
 (setq-default flycheck-disabled-checkers `(emacs-lisp-checkdoc))

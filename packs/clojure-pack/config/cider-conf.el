@@ -33,6 +33,7 @@
 (setq cider-prompt-for-symbol nil)
 (setq cider-show-error-buffer nil)
 (setq cider-test-show-report-on-success t)
+(setq cider-print-quota 1024)
 
 ;; This should probably be set per project in .dir-locals.el
 (setq cider-default-cljs-repl 'figwheel )

@@ -12,6 +12,11 @@
       (while (ignore-errors (paredit-backward-up) t))
     (paredit-backward)))
 
+(defun live-paredit-backward-up ()
+  (interactive)
+  (unless (ignore-errors (paredit-backward-up) t)
+    (paredit-backward)))
+
 (defun live-paredit-forward ()
   "Feels more natural to move to the beginning of the next item
    in the sexp, not the end of the current one."
@@ -135,4 +140,23 @@
 
 (defun live-paredit-copy-sexp-at-point ()
   (interactive)
-    (kill-new (thing-at-point 'sexp)))
+  (kill-new (thing-at-point 'sexp)))
+
+;; Stop paredit from shooting you in the foot by pasting unbalanced parens.
+;; from https://trey-jackson.blogspot.com/2009/09/emacs-tip-33-paredit.html
+(defun paredit-check-region-for-yank ()
+  "run after yank and yank-pop to verify balanced parens"
+  (when paredit-mode
+    (save-excursion
+      (save-restriction
+        (narrow-to-region (point) (mark))
+        (condition-case nil
+            (check-parens)
+          (error
+           (if (not (y-or-n-p "The text inserted has unbalanced parentheses, continue? "))
+               (delete-region (point-min) (point-max)))))))))
+
+(defadvice yank (after yank-check-parens activate)
+  (paredit-check-region-for-yank))
+(defadvice yank-pop (after yank-pop-check-parens activate)
+  (paredit-check-region-for-yank))

@@ -18,7 +18,11 @@
 (package-install 'projectile)
 (package-install 'markdown-mode)
 (package-install 'treemacs)
+(package-install 'emidje)
+(eval-after-load 'cider
+  #'emidje-setup)
 
+(package-install 'gited)
 ;; deal with big files
 (package-install 'vlf)
 (require 'vlf-setup)

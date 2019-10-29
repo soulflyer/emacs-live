@@ -19,7 +19,12 @@
 ;; this sets the character displayed when a line is truncated. use ?\  to remove it altogether.
 (set-display-table-slot standard-display-table 0 ?~)
 
-(setq tramp-default-method "sshx")
+;; Don't think this works. Seem to need to specify the method anyway ie
+;; ssh:iain@mimi.local:<file>
+(setq tramp-default-method "ssh")
+(add-to-list 'tramp-default-method-alist '("mimi.local" "" "ssh"))
+(add-to-list 'tramp-default-method-alist '("soulflyer.co.uk" "" "xssh"))
+(add-to-list 'tramp-default-user-alist '("ssh" "soulflyer\\.co\\.uk'" "jphuquoc"))
 (electric-pair-mode 1)
 
 (ivy-mode 1)
@@ -34,6 +39,9 @@
 
 (setq show-paren-style (quote expression))
 (delete-selection-mode 1)
+
+(require 'flycheck-kotlin)
+(add-hook 'kotlin-mode-hook 'flycheck-mode)
 
 (require 'openwith)
 (openwith-mode t)
@@ -66,7 +74,7 @@
 
 (add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
 (add-to-list 'auto-mode-alist '("\.rake$" . ruby-mode))
-
+(add-to-list 'auto-mode-alist '("\\.rc\\'" . shell-script-mode))
 ;;stop emacs from shitting all over my file system
 (setq make-backup-files nil) ; stop creating those backup~ files
 (setq auto-save-default nil) ; stop creating those #autosave# files

@@ -203,6 +203,8 @@
 (define-key paredit-mode-map (kbd "C-M-k")   'live-paredit-copy-sexp-at-point)
 (define-key paredit-mode-map (kbd "C-<left>")  'paredit-backward)
 (define-key paredit-mode-map (kbd "C-<right>") 'paredit-forward)
+(define-key paredit-mode-map (kbd "C-<up>")    'live-paredit-backward-up)
+(define-key paredit-mode-map (kbd "C-<down>")  'paredit-forward-down)
 (define-key paredit-mode-map (kbd "M-)")       'paredit-forward-slurp-sexp)
 (define-key paredit-mode-map (kbd "C-c p b f") 'paredit-forward-barf-sexp)
 (define-key paredit-mode-map (kbd "C-c p f b") 'paredit-forward-barf-sexp)
@@ -226,8 +228,9 @@
 (define-key dired-mode-map (kbd "f")       'dired-make-file)
 (define-key dired-mode-map (kbd "C-c C-e") 'wdired-change-to-wdired-mode)
 (define-key dired-mode-map (kbd "/")       'dired-up-directory)
-(define-key dired-mode-map (kbd "\\")       'dired-up-directory)
-(define-key dired-mode-map [mouse-2]       'dired-find-file)
+(define-key dired-mode-map (kbd "\\")      'dired-up-directory)
+;; (define-key dired-mode-map [mouse-2]       'dired-find-file)
+(define-key dired-mode-map (kbd "b")       'gited-list-branches)
 
 
 (global-set-key  (kbd "C-x k")   'kill-this-buffer)

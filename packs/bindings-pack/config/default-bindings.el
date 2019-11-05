@@ -8,7 +8,7 @@
 (global-set-key (kbd "M-m")     'iy-go-to-char)
 (global-set-key (kbd "M-M")     'iy-go-to-char-backward)
 (global-set-key (kbd "C-@")     'er/expand-region)
-(global-set-key (kbd "M-2")     'er/contract-region)
+(global-set-key (kbd "C-]")     'er/contract-region)
 (global-set-key (kbd "C-h")     'help)
 (global-set-key (kbd "C-z")     'cua-scroll-down)
 (global-set-key (kbd "M-~")     'switch-to-next-buffer)
@@ -43,9 +43,10 @@
 (global-set-key (kbd "M-SPC ")  'live-delete-whitespace-except-one)
 (global-set-key (kbd "C-<up>")   (lambda () (interactive) (forward-line -10)))
 (global-set-key (kbd "C-<down>") (lambda () (interactive) (forward-line 10)))
-(global-set-key (kbd "C-M-_")   'undo-tree-visualize)
-(global-set-key (kbd "C-_")     'undo-tree-visualize)
-(define-key undo-tree-visualizer-mode-map (kbd "-") 'windresize)
+
+(define-key undo-tree-map                 (kbd "C-_")   'undo-tree-visualize)
+(define-key undo-tree-map                 (kbd "C-M-_") 'undo-tree-undo)
+(define-key undo-tree-visualizer-mode-map (kbd "-")     'windresize)
 
 ;; This is for gui emacs. It shouldn't even reach command line emacs
 (global-set-key (kbd "C-<tab>") 'win-switch-dispatch)

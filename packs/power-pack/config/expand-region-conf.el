@@ -1,2 +1,2 @@
-(live-add-pack-lib "expand-region")
+(package-install 'expand-region)
 (require 'expand-region)

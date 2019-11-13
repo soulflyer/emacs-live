@@ -70,6 +70,12 @@
 ;;s - show popupwindows
 
 
+(global-set-key (kbd "C-c a h") 'auto-highlight-symbol-mode)
+(global-set-key (kbd "C-c a n") 'ahs-forward)
+(global-set-key (kbd "C-c a f") 'ahs-forward)
+(global-set-key (kbd "C-c a p") 'ahs-backward)
+(global-set-key (kbd "C-c a b") 'ahs-backward)
+
 (global-set-key (kbd "C-c h")   'helm-descbinds)
 (global-set-key (kbd "C-c C-r") 'ivy-resume)
 (global-set-key (kbd "C-c o")   'org-agenda)

@@ -76,6 +76,8 @@
 (global-set-key (kbd "C-c a p") 'ahs-backward)
 (global-set-key (kbd "C-c a b") 'ahs-backward)
 
+(global-set-key (kbd "C-c c")   'calendar)
+
 (global-set-key (kbd "C-c h")   'helm-descbinds)
 (global-set-key (kbd "C-c C-r") 'ivy-resume)
 (global-set-key (kbd "C-c o")   'org-agenda)
@@ -138,16 +140,7 @@
 (global-set-key (kbd "C-c i p") (lambda () (interactive) (insert "£")))
 (global-set-key (kbd "C-c i c") (lambda () (interactive) (insert "©")))
 
-(global-set-key (kbd "C-c j p") 'quick-jump-go-back)
-(global-set-key (kbd "C-c j b") 'quick-jump-go-back)
-(global-set-key (kbd "C-c j m") 'quick-jump-push-marker)
-(global-set-key (kbd "C-c j n") 'quick-jump-go-forward)
-(global-set-key (kbd "C-c j f") 'quick-jump-go-forward)
-(global-set-key (kbd "C-c j c") 'quick-jump-clear-all-marker)
-
-(global-set-key (kbd "C-c j d") 'dumb-jump-go)
-(global-set-key (kbd "C-c j u") 'dumb-jump-back)
-(global-set-key (kbd "C-c j g") 'dumb-jump-go-prompt)
+(global-set-key (kbd "C-c j")   'cider-jack-in-clj)
 
 ;; Org link stuff
 (global-set-key (kbd "C-c l s") 'org-store-link)
@@ -162,6 +155,7 @@
 (global-set-key (kbd "C-c m d") 'mc/mark-all-dwim)
 (global-set-key (kbd "C-c m a") 'mc/mark-all-like-this)
 
+(global-set-key (kbd "C-c q")   'quit-window)
 
 ;;window and buffer movement
 ;; No use at all with tmux and emacs single window setup, but keep for switch to gui emacs.

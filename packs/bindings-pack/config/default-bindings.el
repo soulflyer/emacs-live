@@ -91,7 +91,6 @@
 
 (global-set-key (kbd "C-c u")   'underline-with-char)
 (global-set-key (kbd "C-c v")   'visual-line-mode)
-(global-set-key (kbd "C-c C-t") 'toggle-truncate-lines)
 
 (global-set-key (kbd "C-c C-c t") 'live-show-ansi-terminal)
 
@@ -119,6 +118,7 @@
 (global-set-key (kbd "C-c t c") 'comment-box)
 (global-set-key (kbd "C-c t r") 'untabify)
 (global-set-key (kbd "C-c t u") 'underline-with-char)
+(global-set-key (kbd "C-c t t") 'toggle-truncate-lines)
 
 ;;emacs-lisp shortcuts
 (global-set-key (kbd "C-c m b") 'eval-buffer)

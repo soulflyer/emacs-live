@@ -3,7 +3,10 @@
 (setq display-buffer-function 'popwin:display-buffer)
 
 (setq popwin:special-display-config
-      '(("*Help*"  :height 30)
+      '(
+        ;; (" *undo-tree*" :height 10)
+        (" *undo-tree*" :width 0.2 :position right)
+        ("*Help*"  :height 30)
         ("*Completions*" :noselect t)
         ("*Messages*" :noselect t :height 30)
         ("*Apropos*" :noselect t :height 30)
@@ -28,8 +31,7 @@
         ("*Kill Ring*" :height 30)
         ("*Compile-Log*" :height 30 :stick t)
         ("*git-gutter:diff*" :height 30 :stick t)
-        ("*bm-bookmarks*" :height 10 :stick t)
-        (" *undo-tree*" :width 0.2 :position right)))
+        ("*bm-bookmarks*" :height 10 :stick t)))
 
 ;; This lets bm-show-all display in a popwin
 (setq bm-electric-show nil)

@@ -5,7 +5,7 @@
 (setq popwin:special-display-config
       '(
         ;; (" *undo-tree*" :height 10)
-        (" *undo-tree*" :width 0.2 :position right)
+        ;; (" *undo-tree*" :width 0.2 :position right)
         ("*Help*"  :height 30)
         ("*Completions*" :noselect t)
         ("*Messages*" :noselect t :height 30)

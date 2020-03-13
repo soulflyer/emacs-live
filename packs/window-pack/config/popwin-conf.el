@@ -31,7 +31,8 @@
         ("*Kill Ring*" :height 30)
         ("*Compile-Log*" :height 30 :stick t)
         ("*git-gutter:diff*" :height 30 :stick t)
-        ("*bm-bookmarks*" :height 10 :stick t)))
+        ("*bm-bookmarks*" :height 10 :stick t)
+        ("*Bookmark List*" :height 30 :stick t)))
 
 ;; This lets bm-show-all display in a popwin
 (setq bm-electric-show nil)

@@ -100,6 +100,7 @@
 (global-set-key (kbd "C-c b p")   'bm-previous)
 (global-set-key (kbd "C-c b s")   'bm-show-all)
 (global-set-key (kbd "C-c b a")   'bm-show-all)
+(global-set-key (kbd "C-c b l")   'bm-show-all)
 (global-set-key (kbd "C-c b d")   'bm-remove-all-current-buffer)
 (global-set-key (kbd "C-c b C-d") 'bm-remove-all-all-buffers)
 ;;diff shortcuts

@@ -1,9 +1,7 @@
 (package-install 'bm)
+(setq bm-repository-file "/Users/iain/Code/emacs.d/etc/bm-repository")
 (setq bm-restore-repository-on-load t)
 (require 'bm)
-
-
-(setq bm-repository-file "~/.emacs.d/etc/bm-repository")
 
 
 (add-hook 'kill-buffer-hook  #'bm-buffer-save)

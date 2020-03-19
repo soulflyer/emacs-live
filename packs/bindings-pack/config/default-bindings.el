@@ -22,7 +22,9 @@
 
 (global-set-key (kbd "C-o")     'avy-goto-char-timer)
 (global-set-key (kbd "C-M-q")   'quoted-insert)
-(global-set-key (kbd "C-M-\\")  'aggressive-indent-mode)
+
+;; (global-set-key (kbd "C-M-\\")  'aggressive-indent-mode)
+(global-set-key (kbd "C-M-\\")  'live-indent-defun)
 (global-set-key (kbd "C-\\")    'align-regexp)
 (global-set-key (kbd "M-k")     'live-backwards-kill-line)
 (global-set-key (kbd "M-y")     'browse-kill-ring)

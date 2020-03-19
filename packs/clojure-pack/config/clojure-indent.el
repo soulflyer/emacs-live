@@ -1,7 +1,7 @@
 ;;; package --- Summary
 ;;; Commentary:
 ;;; Code:
-(setq clojure-indent-style :always-indent)
+(setq clojure-indent-style :align-arguments)
 (define-clojure-indent
   (defroutes 'defun)
   (GET 2)

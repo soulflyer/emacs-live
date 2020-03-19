@@ -5,7 +5,7 @@
 (setq live-disable-zone t)
 (require 'iy-go-to-char)
 
-(global-aggressive-indent-mode 1)
+;;(global-aggressive-indent-mode 1)
 (add-to-list 'aggressive-indent-excluded-modes 'cider-repl-mode)
 
 (add-hook 'dired-mode-hook      (lambda () (setq truncate-lines t)))

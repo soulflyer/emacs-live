@@ -6,7 +6,7 @@
 (require 'iy-go-to-char)
 
 ;;(global-aggressive-indent-mode 1)
-(add-to-list 'aggressive-indent-excluded-modes 'cider-repl-mode)
+;; (add-to-list 'aggressive-indent-excluded-modes 'cider-repl-mode)
 
 (add-hook 'dired-mode-hook      (lambda () (setq truncate-lines t)))
 (add-hook 'grep-mode-hook       (lambda () (setq truncate-lines t)))

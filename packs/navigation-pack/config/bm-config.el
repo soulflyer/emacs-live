@@ -1,8 +1,9 @@
 (package-install 'bm)
+
 (setq bm-repository-file "/Users/iain/Code/emacs.d/etc/bm-repository")
 (setq bm-restore-repository-on-load t)
-(require 'bm)
 
+(require 'bm)
 
 (add-hook 'kill-buffer-hook  #'bm-buffer-save)
 (add-hook 'find-file-hooks   #'bm-buffer-restore)
@@ -15,6 +16,15 @@
 (setq-default bm-buffer-persistence t)
 (setq bm-cycle-all-buffers t)
 (setq bm-highlight-style 'bm-highlight-line-and-fringe)
+
+(defun buffer-pathnames (buffer-repository)
+  (mapcar 'car buffer-repository))
+
+(defun bm-buffers ()
+  (buffer-pathnames bm-repository))
+
+(defun open-bm-files (bookmarked-buffers)
+  (mapcar 'find-file-noselect bookmarked-buffers))
 
 
 (face-spec-reset-face 'bm-face nil)

@@ -16,6 +16,7 @@
 (setq-default bm-buffer-persistence t)
 (setq bm-cycle-all-buffers t)
 (setq bm-highlight-style 'bm-highlight-line-and-fringe)
+(setq bm-annotation-width 30)
 
 (defun buffer-pathnames (buffer-repository)
   (mapcar 'car buffer-repository))
@@ -26,6 +27,9 @@
 (defun open-bm-files (bookmarked-buffers)
   (mapcar 'find-file-noselect bookmarked-buffers))
 
+(defun bookmark-buffers ()
+  (interactive)
+  (open-bm-files (bm-buffers)))
 
 (face-spec-reset-face 'bm-face nil)
 (set-face-attribute   'bm-face nil :background "blue")

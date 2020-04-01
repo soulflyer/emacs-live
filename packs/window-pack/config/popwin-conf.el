@@ -6,6 +6,7 @@
       '(
         ;; (" *undo-tree*" :height 10)
         ;; (" *undo-tree*" :width 0.2 :position right)
+        ;; ("*Bookmark List*" :regex t :height 30 :position bottom)
         ("*Help*"  :height 30)
         ("*Completions*" :noselect t)
         ("*Messages*" :noselect t :height 30)
@@ -31,8 +32,7 @@
         ("*Kill Ring*" :height 30)
         ("*Compile-Log*" :height 30 :stick t)
         ("*git-gutter:diff*" :height 30 :stick t)
-        ("*bm-bookmarks*" :height 10 :stick t)
-        ("\\*Bookmark List\\*.*" :regex t :height 10)))
+        ("*bm-bookmarks*" :height 20 :stick t)))
 
 ;; This lets bm-show-all display in a popwin
 (setq bm-electric-show nil)

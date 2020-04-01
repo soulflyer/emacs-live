@@ -8,9 +8,15 @@
 ;;(global-aggressive-indent-mode 1)
 ;; (add-to-list 'aggressive-indent-excluded-modes 'cider-repl-mode)
 
+;; This doesn't work, so enable truncate lines globaly
+;; (add-hook 'bm-bookmark-mode-hook (lambda () (setq truncate-lines t)))
+(setq-default truncate-lines t)
+
+;; These are not needed as long as global truncate lines is set
 (add-hook 'dired-mode-hook      (lambda () (setq truncate-lines t)))
 (add-hook 'grep-mode-hook       (lambda () (setq truncate-lines t)))
 (add-hook 'cider-repl-mode-hook (lambda () (setq truncate-lines t)))
+
 (add-hook 'cider-repl-mode-hook '(lambda () (setq scroll-conservatively 101)))
 
 (add-hook 'text-mode-hook 'turn-on-visual-line-mode)

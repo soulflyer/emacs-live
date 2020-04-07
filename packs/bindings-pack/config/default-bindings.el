@@ -72,11 +72,8 @@
 ;;s - show popupwindows
 
 
-(global-set-key (kbd "C-c a h") 'auto-highlight-symbol-mode)
-(global-set-key (kbd "C-c a n") 'ahs-forward)
-(global-set-key (kbd "C-c a f") 'ahs-forward)
-(global-set-key (kbd "C-c a p") 'ahs-backward)
-(global-set-key (kbd "C-c a b") 'ahs-backward)
+
+(global-set-key (kbd "C-c a")   'annotate-mode)
 
 (global-set-key (kbd "C-c c")   'calendar)
 
@@ -261,4 +258,5 @@
 (define-key cider-repl-mode-map   (kbd "C-c q")   'cider-quit)
 (define-key cider-repl-mode-map   (kbd "M-RET")   'cider-doc)
 (define-key cider-mode-map        (kbd "M-RET")   'cider-doc)
+(define-key cider-mode-map        (kbd "C-c .")   'cider-find-ns)
 (define-key lisp-mode-shared-map  (kbd "M-RET")   'live-lisp-describe-thing-at-point)

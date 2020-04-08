@@ -102,6 +102,8 @@
 (global-set-key (kbd "C-c b l")   'bm-show-all)
 (global-set-key (kbd "C-c b d")   'bm-remove-all-current-buffer)
 (global-set-key (kbd "C-c b C-d") 'bm-remove-all-all-buffers)
+(global-set-key (kbd "C-c b o")   'bookmark-buffers)
+
 ;;diff shortcuts
 (global-set-key (kbd "C-c d f") 'diff-buffer-with-file)
 
@@ -171,7 +173,7 @@
 (global-set-key (kbd "C-c w '") (lambda () (interactive) (enlarge-window 1)))
 
 ;; clojure
-(define-key clojure-mode-map (kbd "C-c M-j") 'cider-jack-in-clojurescript)
+(define-key clojure-mode-map (kbd "C-c M-j") 'cider-jack-in-cljs)
 (define-key clojure-mode-map (kbd "C-c c m") 'clojure-convert-collection-to-map)
 (define-key clojure-mode-map (kbd "C-c c v") 'clojure-convert-collection-to-vector)
 (define-key clojure-mode-map (kbd "C-c c l") 'clojure-convert-collection-to-list)

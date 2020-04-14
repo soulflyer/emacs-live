@@ -12,6 +12,8 @@
 ;; (add-hook 'bm-bookmark-mode-hook (lambda () (setq truncate-lines t)))
 (setq-default truncate-lines t)
 
+(add-hook 'calendar-initial-window-hook 'diary-mark-entries)
+
 ;; These are not needed as long as global truncate lines is set
 (add-hook 'dired-mode-hook      (lambda () (setq truncate-lines t)))
 (add-hook 'grep-mode-hook       (lambda () (setq truncate-lines t)))
@@ -19,8 +21,8 @@
 
 (add-hook 'cider-repl-mode-hook '(lambda () (setq scroll-conservatively 101)))
 
-(add-hook 'text-mode-hook 'turn-on-visual-line-mode)
-(add-hook 'prog-mode-hook 'turn-on-visual-line-mode)
+;; (add-hook 'text-mode-hook 'turn-on-visual-line-mode)
+;; (add-hook 'prog-mode-hook 'turn-on-visual-line-mode)
 
 ;; this sets the character displayed when a line is truncated. use ?\  to remove it altogether.
 (set-display-table-slot standard-display-table 0 ?~)

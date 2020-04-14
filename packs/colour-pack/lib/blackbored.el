@@ -33,6 +33,7 @@
       (mouse-color . "sienna1"))
 
      (hl-line ((t (:background "#101010"))))
+     (diary ((t (:foreground "orange"))))
      (default ((t (:background "black" :foreground "#b2b2d0"))))
      (blue ((t (:foreground "blue"))))
      (bold ((t (:bold t))))

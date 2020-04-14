@@ -46,8 +46,8 @@
 (global-set-key (kbd "C-<up>")   (lambda () (interactive) (forward-line -10)))
 (global-set-key (kbd "C-<down>") (lambda () (interactive) (forward-line 10)))
 
-(define-key undo-tree-map                 (kbd "C-_")   'undo-tree-visualize)
-(define-key undo-tree-map                 (kbd "C-M-_") 'undo-tree-undo)
+(define-key undo-tree-map                 (kbd "C-_")   'undo-tree-undo)
+(define-key undo-tree-map                 (kbd "C-M-_") 'undo-tree-visualize)
 (define-key undo-tree-visualizer-mode-map (kbd "-")     'windresize)
 
 ;; This is for gui emacs. It shouldn't even reach command line emacs

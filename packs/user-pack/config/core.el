@@ -48,9 +48,6 @@
 (setq show-paren-style (quote expression))
 (delete-selection-mode 1)
 
-(require 'flycheck-kotlin)
-(add-hook 'kotlin-mode-hook 'flycheck-mode)
-
 (require 'openwith)
 (openwith-mode t)
 (setq openwith-associations '(("\\.\\(png\\|jp?g\\|pdf\\)\\'" "open" (file))

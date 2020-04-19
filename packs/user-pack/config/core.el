@@ -6,7 +6,7 @@
 (require 'iy-go-to-char)
 
 (unless (string= "subversion\n" (shell-command-to-string "hostname -s"))
-  (set-face-attribute 'mode-line nil :foreground "purple"))
+  (set-face-attribute 'mode-line nil :foreground "#C930d0"))
 
 ;;(global-aggressive-indent-mode 1)
 ;; (add-to-list 'aggressive-indent-excluded-modes 'cider-repl-mode)

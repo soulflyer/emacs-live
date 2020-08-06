@@ -16,7 +16,7 @@
 (global-set-key (kbd "M-p")     'outline-previous-visible-heading)
 (global-set-key (kbd "M-n")     'outline-next-visible-heading)
 (global-set-key (kbd "M-'")     'repeat)
-(global-set-key [f6]            'rgrep)
+(global-set-key [f6]            'projectile-ripgrep)
 (global-set-key [f5]            'rgrep-context)
 (define-key grep-mode-map (kbd "r") 'rename-buffer)
 
@@ -74,15 +74,21 @@
 
 
 (global-set-key (kbd "C-c a")   'annotate-mode)
+(global-set-key (kbd "C-c C-a") 'annotate-mode)
 
 (global-set-key (kbd "C-c c")   'calendar)
+
+(global-set-key (kbd "C-c f") 'hs-minor-mode)
+(define-key hs-minor-mode-map (kbd "C-c f t") 'hs-toggle-hiding)
+(define-key hs-minor-mode-map (kbd "C-c f a") 'hs-hide-all)
+(define-key hs-minor-mode-map (kbd "C-c f u") 'hs-show-all)
 
 (global-set-key (kbd "C-c h")   'helm-descbinds)
 (global-set-key (kbd "C-c C-r") 'ivy-resume)
 (global-set-key (kbd "C-c o")   'org-agenda)
 
 (global-set-key (kbd "C-c C-j") 'cider-jack-in)
-(global-set-key (kbd "C-c M-j") 'cider-jack-in-clojurescript)
+(global-set-key (kbd "C-c M-j") 'cider-jack-in-cljs)
 (global-set-key (kbd "C-c M-c") 'cider-connect)
 
 (global-set-key (kbd "C-c C-s") 'yas-insert-snippet)
@@ -251,6 +257,7 @@
 (global-set-key  (kbd "C-x w")   'delete-window)
 
 (define-key projectile-mode-map   (kbd "C-x p")   'projectile-command-map)
+(define-key projectile-mode-map   (kbd "M-p")     'projectile-command-map)
 
 (define-key cider-repl-mode-map   (kbd "<up>")    'cider-repl-backward-input)
 (define-key cider-repl-mode-map   (kbd "<down>")  'cider-repl-next-input)

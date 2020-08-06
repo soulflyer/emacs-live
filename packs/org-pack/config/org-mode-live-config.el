@@ -10,7 +10,7 @@
 ;; Yasnippet compatibility
 (add-hook 'org-mode-hook
           (lambda ()
-            (org-set-local 'yas/trigger-key [tab])
+            (setq-local yas/trigger-key [tab])
                                   (define-key yas/keymap [tab] 'yas/next-field-or-maybe-expand)))
 
 (defun yas/org-very-safe-expand ()

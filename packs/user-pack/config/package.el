@@ -27,6 +27,10 @@
 (package-install 'flycheck)
 (package-install 'gited)
 (package-install 'google-translate)
+(require 'google-translate)
+(require 'google-translate-default-ui)
+(setq google-translate-default-target-language "en")
+(setq google-translate-default-source-language "de")
 
 (package-install 'grep-a-lot)
 (require 'grep-a-lot)

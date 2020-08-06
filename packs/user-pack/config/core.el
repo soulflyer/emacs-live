@@ -45,6 +45,7 @@
 (setq ivy-use-selectable-prompt t)
 
 (projectile-mode +1)
+(setq projectile-completion-system 'ivy)
 (which-key-mode)
 ;; shut up about my elisp code you pedant
 (setq-default flycheck-disabled-checkers `(emacs-lisp-checkdoc))

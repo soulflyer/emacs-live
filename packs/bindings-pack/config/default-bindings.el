@@ -17,7 +17,7 @@
 (global-set-key (kbd "M-n")     'outline-next-visible-heading)
 (global-set-key (kbd "M-'")     'repeat)
 (global-set-key [f6]            'projectile-ripgrep)
-(global-set-key [f5]            'rgrep-context)
+(global-set-key [f5]            'rgrep)
 (define-key grep-mode-map (kbd "r") 'rename-buffer)
 
 (global-set-key (kbd "C-o")     'avy-goto-char-timer)
@@ -79,9 +79,11 @@
 (global-set-key (kbd "C-c c")   'calendar)
 
 (global-set-key (kbd "C-c f") 'hs-minor-mode)
-(define-key hs-minor-mode-map (kbd "C-c f t") 'hs-toggle-hiding)
-(define-key hs-minor-mode-map (kbd "C-c f a") 'hs-hide-all)
-(define-key hs-minor-mode-map (kbd "C-c f u") 'hs-show-all)
+(eval-after-load 'hs-minor-mode
+  '(progn
+     (define-key hs-minor-mode-map (kbd "C-c f t") 'hs-toggle-hiding)
+     (define-key hs-minor-mode-map (kbd "C-c f a") 'hs-hide-all)
+     (define-key hs-minor-mode-map (kbd "C-c f u") 'hs-show-all)))
 
 (global-set-key (kbd "C-c h")   'helm-descbinds)
 (global-set-key (kbd "C-c C-r") 'ivy-resume)

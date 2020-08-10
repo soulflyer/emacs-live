@@ -33,7 +33,8 @@
         ("*Compile-Log*" :height 30 :stick t)
         ("*git-gutter:diff*" :height 30 :stick t)
         ("*bm-bookmarks*" :height 20 :stick t)
-        ("*ripgrep-search*" :height 30 :stick t)))
+        ;; ("*ripgrep-search*" :height 30 :stick t)
+        ))
 
 ;; This lets bm-show-all display in a popwin
 (setq bm-electric-show nil)

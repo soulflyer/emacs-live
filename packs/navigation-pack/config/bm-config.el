@@ -16,7 +16,7 @@
 (setq-default bm-buffer-persistence t)
 (setq bm-cycle-all-buffers t)
 (setq bm-highlight-style 'bm-highlight-line-and-fringe)
-(setq bm-annotation-width 10)
+(setq bm-annotation-width 0)
 
 (defun buffer-pathnames (buffer-repository)
   (mapcar 'car buffer-repository))

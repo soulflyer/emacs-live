@@ -78,12 +78,10 @@
 
 (global-set-key (kbd "C-c c")   'calendar)
 
-(global-set-key (kbd "C-c f") 'hs-minor-mode)
-(eval-after-load 'hs-minor-mode
-  '(progn
-     (define-key hs-minor-mode-map (kbd "C-c f t") 'hs-toggle-hiding)
-     (define-key hs-minor-mode-map (kbd "C-c f a") 'hs-hide-all)
-     (define-key hs-minor-mode-map (kbd "C-c f u") 'hs-show-all)))
+(global-set-key (kbd "C-c f f") 'hs-minor-mode)
+(define-key hs-minor-mode-map (kbd "C-c f t") 'hs-toggle-hiding)
+(define-key hs-minor-mode-map (kbd "C-c f a") 'hs-hide-all)
+(define-key hs-minor-mode-map (kbd "C-c f u") 'hs-show-all)
 
 (global-set-key (kbd "C-c h")   'helm-descbinds)
 (global-set-key (kbd "C-c C-r") 'ivy-resume)

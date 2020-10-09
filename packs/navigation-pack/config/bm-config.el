@@ -27,7 +27,7 @@
 (defun open-bm-files (bookmarked-buffers)
   (mapcar 'find-file-noselect bookmarked-buffers))
 
-(defun bookmark-buffers ()
+(defun open-bookmarked-buffers ()
   (interactive)
   (open-bm-files (bm-buffers)))
 

@@ -79,17 +79,18 @@
 (global-set-key (kbd "C-c c")   'calendar)
 
 (global-set-key (kbd "C-c f f") 'hs-minor-mode)
-(define-key hs-minor-mode-map (kbd "C-c f t") 'hs-toggle-hiding)
-(define-key hs-minor-mode-map (kbd "C-c f a") 'hs-hide-all)
-(define-key hs-minor-mode-map (kbd "C-c f u") 'hs-show-all)
+(global-set-key (kbd "C-c f t") 'hs-toggle-hiding)
+(global-set-key (kbd "C-c f a") 'hs-hide-all)
+(global-set-key (kbd "C-c f u") 'hs-show-all)
 
 (global-set-key (kbd "C-c h")   'helm-descbinds)
 (global-set-key (kbd "C-c C-r") 'ivy-resume)
 (global-set-key (kbd "C-c o")   'org-agenda)
 
-(global-set-key (kbd "C-c C-j") 'cider-jack-in)
-(global-set-key (kbd "C-c M-j") 'cider-jack-in-cljs)
-(global-set-key (kbd "C-c M-c") 'cider-connect)
+(global-set-key (kbd "C-c C-j")     'cider-jack-in)
+(global-set-key (kbd "C-c M-j")     'cider-jack-in-cljs)
+(global-set-key (kbd "C-c M-c")     'cider-connect)
+(global-set-key (kbd "C-c C-x C-c") 'cider-connect)
 
 (global-set-key (kbd "C-c C-s") 'yas-insert-snippet)
 (global-set-key (kbd "C-c C-n") 'yas-new-snippet)
@@ -108,7 +109,7 @@
 (global-set-key (kbd "C-c b l")   'bm-show-all)
 (global-set-key (kbd "C-c b d")   'bm-remove-all-current-buffer)
 (global-set-key (kbd "C-c b C-d") 'bm-remove-all-all-buffers)
-(global-set-key (kbd "C-c b o")   'bookmark-buffers)
+(global-set-key (kbd "C-c b o")   'open-bookmarked-buffers)
 
 ;;diff shortcuts
 (global-set-key (kbd "C-c d f") 'diff-buffer-with-file)
@@ -177,6 +178,14 @@
 (global-set-key (kbd "C-c w ,") 'enlarge-window-horizontally)
 (global-set-key (kbd "C-c w /") (lambda () (interactive) (enlarge-window -1)))
 (global-set-key (kbd "C-c w '") (lambda () (interactive) (enlarge-window 1)))
+
+;; Calendar. this should work out of the box but it was often attempting to use org-agenda-diary-entry which doesn't seem to work.
+(define-key calendar-mode-map (kbd "i") nil)
+(define-key calendar-mode-map (kbd "i d") 'diary-insert-entry)
+(define-key calendar-mode-map (kbd "i w") 'diary-insert-weekly-entry)
+(define-key calendar-mode-map (kbd "i m") 'diary-insert-monthly-entry)
+(define-key calendar-mode-map (kbd "i y") 'diary-insert-yearly-entry)
+(define-key calendar-mode-map (kbd "i b") 'diary-insert-block-entry)
 
 ;; clojure
 (define-key clojure-mode-map (kbd "C-c M-j") 'cider-jack-in-cljs)

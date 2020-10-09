@@ -252,3 +252,4 @@
 (message (concat "\n\n Pack loading completed. Your Emacs is Live...\n\n" live-ascii-art-running "\n\n"))
 (put 'downcase-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
+(put 'dired-find-alternate-file 'disabled nil)

@@ -36,7 +36,7 @@
 (setq cider-print-quota 65536)
 
 ;; This should probably be set per project in .dir-locals.el
-(setq cider-default-cljs-repl 'figwheel )
+;; (setq cider-default-cljs-repl 'figwheel )
 
 ;; Colourize all fns known to be defined, not just clojure core
 (setq cider-font-lock-dynamically '(macro core function var deprecated))

@@ -6,9 +6,9 @@
 (package-install 'auto-highlight-symbol)
 (package-install 'beacon)
 
-(package-install 'emidje)
-(eval-after-load 'cider
-  #'emidje-setup)
+;; (package-install 'emidje)
+;; (eval-after-load 'cider
+;;   #'emidje-setup)
 
 (package-install 'counsel)
 ;;(package-install 'counsel-osx-app)
